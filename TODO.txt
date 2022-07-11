@@ -17,7 +17,7 @@
 
 
 --- June 27: Start ---
-- 1h ⌛ 1h : 🚧 ✅ [WIP] Review UW big data lectures.
+- 1h ⌛ 1h : ✅ Review UW big data lectures.
 - 30m ⌛ 30m : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
 --- June 27: End   ---
 
