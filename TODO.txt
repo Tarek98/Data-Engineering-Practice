@@ -1,0 +1,55 @@
+✅ [Done] ❌ [Undone] 🚧 [Focus-Point] ⌛[ETA]
+
+- 5h ⌛ 2̶h̶ 4h : ✅ Get WordCount scala sample to work locally & understand how it works E2E.
+    - Needs to work locally, instead of hadoop cluster it was originally designed to run on.
+    - Got it working with Scala Metals + SBT at word-count-test folder :-)
+
+
+- 15m ⌛ 15m : ✅ Ensure local debugging & running of work's codebase still works.
+- 2h ⌛ 30m : ✅ Play around with word count app a bit more 
+& utilization of local cores as spark workers.
+
+
+--- June 26: Start ---
+- 1h30m ⌛ 1h30m : ✅ Play around with word count app a bit more & utilization of local cores as spark workers.
+- 30m ⌛ 30m : ✅ Address TODO understanding comments in buildrun wordcount script.
+--- June 26: End   ---
+
+
+--- June 27: Start ---
+- 1h ⌛ 1h : 🚧 ✅ [WIP] Review ECE 454 big data lectures.
+- 30m ⌛ 30m : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
+--- June 27: End   ---
+
+
+--- July 4: Start ---
+- 1h ⌛ 1h : ✅ [Done] Review ECE 454 big data lectures.
+- 30m ⌛ 1h : 🚧 ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
+--- July 4: End   ---
+
+
+--- July 11: Start ---
+- 0 ⌛ 30m : Setup SSH Keys for personal github account + 
+Create git repos for the practice codebases you already have.
+- 0 ⌛ 1h : Build ece-454-redeveloped/task1.scala.
+    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+- 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)...
+--- July 11: End ---
+
+
+- 0 ⌛ 1h : Review scala play ground codebase. 
+
+- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
+
+- 0 ⌛ 1h : Build ece-454-redeveloped/task2.scala
+    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+
+- 0 ⌛ 1h : Build ece-454-redeveloped/task3.scala
+    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+
+- 0 ⌛ 1h : Build ece-454-redeveloped/task4.scala
+    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+
+- 0 ⌛ 2h : Setup databricks cluster to get deeper understanding of how what you've 
+been running locally so far will work on cluster.
+    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).

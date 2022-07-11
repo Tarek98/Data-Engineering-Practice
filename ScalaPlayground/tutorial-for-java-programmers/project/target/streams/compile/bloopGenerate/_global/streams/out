@@ -1,0 +1,4 @@
+[debug] [playgroundcode-build] Classpath dependencies List()
+[debug] [playgroundcode-build] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'playgroundcode-build' to '/Users/tarek.a/code/ScalaPlayground/playgroundcode/project/.bloop/playgroundcode-build.json'
+[success] Generated .bloop/playgroundcode-build.json

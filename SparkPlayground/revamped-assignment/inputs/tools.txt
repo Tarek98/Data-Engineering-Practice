@@ -1,0 +1,42 @@
+*** From Job Posting ***
+- Product: Microsoft Teams 
+  (Could read blog posts; brief end-to-end architectural understanding would be great!)
+
+- New Vancouver team: 
+  "Telemetry (Core Processing) team": 
+  Data collection, processing, and analytics platform.
+
+- Big Data Scale: 100s of TBs per day, Millions of events per minute.
+
+- Goal: Enable feature teams to understand their customers 
+        AND drive strategic investment to make customers successful.
+
+- Langs: Scala, C#, Java, Python.
+
+- Frameworks: Big Data Tools, Map Reduce, Spark, Azure.
+
+
+*** From Technical Interviews ***
+- Architecture: Telemetry points, JSON files to internal teams, 
+                files are read periodically (not very streaming approach currently, more batch/periodic), 
+                Each region is a cluster, 20 nodes per cluster, insane amount of cores, 
+                even Azure data storage can't handle amount of data (sharding must be done)...
+
+- Two Main Event Categories:
+  User engagement (actions, feature usage like calendar, product insights, etc.)
+  AND
+  Performance Quality (video/voice calls, system behavior, cost savings in processing + storage, etc.)
+
+- Frameworks mentioned (not too specific, since various subteams use diff tools):
+  Databricks, HDInsights Clusters, Spark Scala.
+
+- Go for some hands on projects if you can 
+  -> Take Large datasets (Big Data)
+  -> aggregate them, do steps in ETL, use tools mentioned in posting & interviews
+  -> ...
+
+- Several diff configs in spark 
+  -> identifying how to partition data
+  -> optimizations of file size & chunks to done there
+  -> PoCs using different designs
+  -> ...

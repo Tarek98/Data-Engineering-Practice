@@ -1,0 +1,142 @@
+2022.04.20 17:02:20 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2022.04.20 17:02:20 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log[0m
+2022.04.20 17:02:20 INFO  Started: Metals version 0.11.2 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.66.0.[0m
+2022.04.20 17:02:20 INFO  Parse release: 1.8.0_312[0m
+2022.04.20 17:02:21 INFO  time: initialize in 0.85s[0m
+2022.04.20 17:02:21 WARN  Build server is not auto-connectable.[0m
+2022.04.20 17:02:21 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.04.20 17:02:22 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/intro/Playground.scala[0m
+2022.04.20 17:02:23 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/intro/Playground.scala. Using presentation compiler with project's scala-library version: 3.1.1[0m
+2022.04.20 17:02:25 INFO  time: code lens generation in 2.87s[0m
+2022.04.20 17:05:33 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/intro/src/Playground.scala[0m
+2022.04.20 19:33:14 INFO  shutting down Metals[0m
+2022.04.21 17:00:57 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.04.21 17:00:57 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.04.21 17:00:57 INFO  Started: Metals version 0.11.2 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.66.0.
+2022.04.21 17:00:57 INFO  Parse release: 1.8.0_312
+2022.04.21 17:00:58 INFO  time: initialize in 0.93s
+2022.04.21 17:00:59 WARN  Build server is not auto-connectable.
+2022.04.21 17:00:59 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.04.21 17:00:59 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/intro/src/Playground.scala
+2022.04.21 17:01:02 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/intro/src/Playground.scala. Using presentation compiler with project's scala-library version: 3.1.1
+2022.04.21 17:01:04 INFO  time: code lens generation in 4.76s
+2022.04.21 17:05:07 INFO  
+2022.04.21 17:05:07 INFO  Template applied in /Users/tarek.a/code/ScalaPlayground/./playgroundcode
+2022.04.21 17:05:07 INFO  
+2022.04.21 17:05:07 INFO  time: ran 'giter8.Giter8' in 2.52s
+2022.04.21 17:10:09 INFO  shutting down Metals
+2022.06.14 13:52:05 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.14 13:52:05 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.14 13:52:05 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.14 13:52:06 INFO  time: initialize in 0.63s
+2022.06.14 13:52:06 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.14 13:52:06 WARN  Build server is not auto-connectable.
+2022.06.14 13:52:06 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.14 13:52:06 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.14 13:52:09 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.14 13:52:12 INFO  time: code lens generation in 4.34s
+2022.06.14 14:39:08 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.14 14:39:19 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.14 18:45:42 INFO  shutting down Metals
+2022.06.15 09:02:50 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.15 09:02:52 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.15 09:02:52 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.15 09:02:54 INFO  time: initialize in 2.31s
+2022.06.15 09:02:56 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.15 09:02:56 WARN  Build server is not auto-connectable.
+2022.06.15 09:02:56 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.15 09:02:57 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.15 09:03:05 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.15 09:03:13 INFO  time: code lens generation in 16s
+2022.06.15 18:00:48 INFO  shutting down Metals
+2022.06.16 09:22:46 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.16 09:22:48 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.16 09:22:48 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.16 09:22:49 INFO  time: initialize in 1.61s
+2022.06.16 09:22:49 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.16 09:22:51 WARN  Build server is not auto-connectable.
+2022.06.16 09:22:51 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.16 09:22:52 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.16 09:22:59 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.16 09:23:04 INFO  time: code lens generation in 12s
+2022.06.16 09:23:04 INFO  time: code lens generation in 1.45s
+2022.06.17 18:29:47 INFO  shutting down Metals
+2022.06.20 09:08:18 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.20 09:08:19 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.20 09:08:19 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.20 09:08:20 INFO  time: initialize in 0.85s
+2022.06.20 09:08:20 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.20 09:08:20 WARN  Build server is not auto-connectable.
+2022.06.20 09:08:20 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.20 09:08:21 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.20 09:08:24 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.20 09:08:28 INFO  time: code lens generation in 6.57s
+2022.06.20 17:59:52 INFO  shutting down Metals
+2022.06.21 09:03:37 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.21 09:03:37 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.21 09:03:37 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.21 09:03:38 INFO  time: initialize in 0.94s
+2022.06.21 09:03:38 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.21 09:03:39 WARN  Build server is not auto-connectable.
+2022.06.21 09:03:39 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.21 09:03:41 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.21 09:03:46 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.21 09:03:54 INFO  time: code lens generation in 11s
+2022.06.21 18:02:07 INFO  shutting down Metals
+2022.06.22 09:07:56 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.22 09:07:57 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.22 09:07:57 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.67.2.
+2022.06.22 09:07:58 INFO  time: initialize in 1.07s
+2022.06.22 09:07:58 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.22 09:07:58 WARN  Build server is not auto-connectable.
+2022.06.22 09:07:58 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.22 09:07:59 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.22 09:08:06 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.22 09:08:11 INFO  time: code lens generation in 11s
+2022.06.22 17:16:43 INFO  shutting down Metals
+2022.06.23 09:05:21 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.23 09:05:22 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.23 09:05:22 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.68.1.
+2022.06.23 09:05:23 INFO  time: initialize in 1.16s
+2022.06.23 09:05:25 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.23 09:05:25 WARN  Build server is not auto-connectable.
+2022.06.23 09:05:25 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.23 09:05:26 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.23 09:05:31 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.23 18:11:25 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.23 19:00:56 INFO  shutting down Metals
+2022.06.24 08:10:08 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.24 08:10:08 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.24 08:10:08 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.68.1.
+2022.06.24 08:10:10 INFO  time: initialize in 1.45s
+2022.06.24 08:10:10 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.24 08:10:10 WARN  Build server is not auto-connectable.
+2022.06.24 08:10:10 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.24 08:10:12 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.24 08:10:17 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.24 08:10:20 INFO  time: code lens generation in 7.47s
+2022.06.24 15:04:09 INFO  shutting down Metals
+2022.06.26 19:03:15 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.26 19:03:16 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.26 19:03:16 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.68.1.
+2022.06.26 19:03:16 INFO  time: initialize in 0.6s
+2022.06.26 19:03:16 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.26 19:03:16 WARN  Build server is not auto-connectable.
+2022.06.26 19:03:16 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.26 19:03:17 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.26 19:03:20 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.26 19:03:23 INFO  time: code lens generation in 5.5s
+2022.06.26 19:27:37 WARN  no build target for: /Users/tarek.a/code/SparkPlayground/original-assignment/SparkWC.scala
+2022.06.26 20:53:51 INFO  shutting down Metals
+2022.06.27 09:04:53 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/ScalaPlayground/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.06.27 09:04:53 INFO  logging to file /Users/tarek.a/code/ScalaPlayground/.metals/metals.log
+2022.06.27 09:04:53 INFO  Started: Metals version 0.11.6 in workspace '/Users/tarek.a/code/ScalaPlayground' for client Visual Studio Code 1.68.1.
+2022.06.27 09:04:55 INFO  time: initialize in 1.31s
+2022.06.27 09:04:55 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.06.27 09:04:55 WARN  Build server is not auto-connectable.
+2022.06.27 09:04:55 WARN  no build tool detected in workspace '/Users/tarek.a/code/ScalaPlayground'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2022.06.27 09:04:57 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.27 09:05:01 INFO  no build target found for /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.1.2
+2022.06.27 09:05:07 INFO  time: code lens generation in 9.17s
+2022.06.27 11:21:12 WARN  no build target for: /Users/tarek.a/code/ScalaPlayground/playgroundcode/src/main/scala/Main.scala
+2022.06.27 12:21:41 INFO  shutting down Metals
