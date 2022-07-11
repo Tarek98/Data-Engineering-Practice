@@ -36,7 +36,8 @@ Create git repos for the practice codebases you already have.
 - 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)...
 --- July 11: End ---
 
-- 0 ⌛ 30m : In Word Count sample, experiment with RDD partitioning & all cores utilization.
+- 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization
++ move test code for this into another sourcecode file.
 
 - 0 ⌛ 1h : Review scala play ground codebase. 
 
