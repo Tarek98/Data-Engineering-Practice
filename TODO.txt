@@ -31,13 +31,16 @@
 --- July 11: Start ---
 - 45m ⌛ 30m : ✅ Setup SSH Keys for personal github account + 
 Create git repos for the practice codebases you already have.
-- 0 ⌛ 1h : Build UW-redeveloped/task1.scala.
+- 45m ⌛ 1h : ✅ ❌ [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.
-- 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)...
 --- July 11: End ---
+
+- 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)...
 
 - 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization
 + move test code for this into another sourcecode file.
+
+- 0 ⌛ 1h : In Word Count sample, resolve TODO comments & ensure buildrun succeeds.
 
 - 0 ⌛ 1h : Review scala play ground codebase. 
 

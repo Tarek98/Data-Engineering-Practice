@@ -31,8 +31,6 @@ echo "-s : skipBuild : $skipBuild"
 echo
 
 
-
-
 echo --- "Ensuring current directory is set to the current path of this script"
 # TODO: understand how the SCRIPT_DIR command works, as it was copied from stack overflow; 
 #       don't be a monkey ;-)
