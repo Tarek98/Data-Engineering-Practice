@@ -17,38 +17,39 @@
 
 
 --- June 27: Start ---
-- 1h ⌛ 1h : 🚧 ✅ [WIP] Review ECE 454 big data lectures.
+- 1h ⌛ 1h : 🚧 ✅ [WIP] Review UW big data lectures.
 - 30m ⌛ 30m : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
 --- June 27: End   ---
 
 
 --- July 4: Start ---
-- 1h ⌛ 1h : ✅ [Done] Review ECE 454 big data lectures.
-- 30m ⌛ 1h : 🚧 ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
+- 1h ⌛ 1h : ✅ [Done] Review UW big data lectures.
+- 30m ⌛ 1h : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
 --- July 4: End   ---
 
 
 --- July 11: Start ---
-- 0 ⌛ 30m : Setup SSH Keys for personal github account + 
+- 45m ⌛ 30m : ✅ Setup SSH Keys for personal github account + 
 Create git repos for the practice codebases you already have.
-- 0 ⌛ 1h : Build ece-454-redeveloped/task1.scala.
-    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+- 0 ⌛ 1h : Build UW-redeveloped/task1.scala.
+    - Encouraged to use UW assignment resources in OneNote for help understanding.
 - 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)...
 --- July 11: End ---
 
+- 0 ⌛ 30m : In Word Count sample, experiment with RDD partitioning & all cores utilization.
 
 - 0 ⌛ 1h : Review scala play ground codebase. 
 
 - 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
 
-- 0 ⌛ 1h : Build ece-454-redeveloped/task2.scala
-    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+- 0 ⌛ 1h : Build UW-redeveloped/task2.scala
+    - Encouraged to use UW assignment resources in OneNote for help understanding.
 
-- 0 ⌛ 1h : Build ece-454-redeveloped/task3.scala
-    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+- 0 ⌛ 1h : Build UW-redeveloped/task3.scala
+    - Encouraged to use UW assignment resources in OneNote for help understanding.
 
-- 0 ⌛ 1h : Build ece-454-redeveloped/task4.scala
-    - Encouraged to use ECE-454 assignment resources in OneNote for help understanding.
+- 0 ⌛ 1h : Build UW-redeveloped/task4.scala
+    - Encouraged to use UW assignment resources in OneNote for help understanding.
 
 - 0 ⌛ 2h : Setup databricks cluster to get deeper understanding of how what you've 
 been running locally so far will work on cluster.

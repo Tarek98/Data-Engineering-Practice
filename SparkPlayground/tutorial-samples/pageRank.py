@@ -102,7 +102,7 @@ if __name__ == "__main__":
         #                    -> Idea 2: 
         #                       -> Research how to minimize time spent in GC in Spark
         #                       -> ... 
-        #        -> ECE454 Performance Tuning Tips: minimize # job stages, # data shuffles, time spent in garbage collection.
+        #        -> UW Performance Tuning Tips: minimize # job stages, # data shuffles, time spent in garbage collection.
         if prev_ranks != None:
             num_diverged = ranks.join(prev_ranks).filter(lambda row: abs(row[1][0]-row[1][1]) > 0.0001).count()
             if num_diverged == 0:
