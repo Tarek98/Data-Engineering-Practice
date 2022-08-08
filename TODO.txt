@@ -37,9 +37,11 @@ Create git repos for the practice codebases you already have.
 
 --- August 8: Start ---
 - 0 ⌛ 1h : Review + run through scala play ground codebase. 
-- 0 ⌛ 30m : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)... Hands-on to reinforce ideas...
+- 0 ⌛ 1h : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)... Hands-on to reinforce ideas...
 --- August 8: End ---
 
+- 0 ⌛ 30m : Relearn grep & regex matching basics.
+    - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
 
 - 0 ⌛ 1h : [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.

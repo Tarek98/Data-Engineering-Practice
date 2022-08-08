@@ -1481,3 +1481,117 @@ INFO: Unsupported notification method: $/setTrace
 2022.08.08 14:50:31 INFO  time: compiled tutorial-for-java-programmers in 0.95s
 2022.08.08 14:50:38 INFO  compiling tutorial-for-java-programmers (1 scala source)
 2022.08.08 14:50:38 INFO  time: compiled tutorial-for-java-programmers in 0.94s
+Aug 08, 2022 3:00:02 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 3:00:03 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 3:00:03 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=108
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=108
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+2022.08.08 15:08:26 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:08:27 INFO  time: compiled tutorial-for-java-programmers in 1.14s
+2022.08.08 15:08:31 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 1m 29.929s)
+2022.08.08 15:08:31 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:08:31 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:08:31 INFO  Starting debug proxy for [Main]
+2022.08.08 15:08:31 INFO  Trying to attach to remote debuggee VM localhost:56334 .
+2022.08.08 15:08:31 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:08:31 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:08:31 INFO  Closing debug server tcp://0.0.0.0:56331
+Aug 08, 2022 3:08:31 PM org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer fireError
+SEVERE: java.net.SocketException: Socket closed
+org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.net.SocketException: Socket closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at scala.meta.internal.metals.debug.SocketEndpoint.consume(SocketEndpoint.scala:22)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.consume(MessageIdAdapter.scala:43)
+	at scala.meta.internal.metals.debug.ServerAdapter.send(ServerAdapter.scala:30)
+	at scala.meta.internal.metals.debug.DebugProxy.$anonfun$handleClientMessage$1(DebugProxy.scala:146)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.$anonfun$listen$1(MessageIdAdapter.scala:57)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at scala.meta.internal.metals.debug.SocketEndpoint.listen(SocketEndpoint.scala:26)
+	at scala.meta.internal.metals.debug.MessageIdAdapter.listen(MessageIdAdapter.scala:47)
+	at scala.meta.internal.metals.debug.DebugProxy.$anonfun$listenToClient$1(DebugProxy.scala:65)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 16 more
+
+2022.08.08 15:08:36 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:08:36 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 1m 34.912s)
+2022.08.08 15:08:36 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:08:36 INFO  time: compiled tutorial-for-java-programmers in 0.76s
+2022.08.08 15:08:39 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 1m 37.676s)
+2022.08.08 15:08:39 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:08:39 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:08:39 INFO  Starting debug proxy for [Main]
+2022.08.08 15:08:39 INFO  Trying to attach to remote debuggee VM localhost:56352 .
+2022.08.08 15:08:39 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:08:39 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:08:39 INFO  Closing debug server tcp://0.0.0.0:56348
+2022.08.08 15:13:45 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:13:45 INFO  time: compiled tutorial-for-java-programmers in 0.88s
+2022.08.08 15:14:03 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:14:03 INFO  time: compiled tutorial-for-java-programmers in 0.88s
+2022.08.08 15:14:10 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:14:10 INFO  time: compiled tutorial-for-java-programmers in 0.89s
+2022.08.08 15:14:20 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 7m 19.43s)
+2022.08.08 15:14:20 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:14:20 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:14:20 INFO  Starting debug proxy for [Main]
+2022.08.08 15:14:20 INFO  Trying to attach to remote debuggee VM localhost:56449 .
+2022.08.08 15:14:20 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:14:21 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:14:20 INFO  Closing debug server tcp://0.0.0.0:56445
+2022.08.08 15:14:36 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 7m 34.762s)
+2022.08.08 15:14:36 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:14:36 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:14:36 INFO  time: compiled tutorial-for-java-programmers in 0.89s
+2022.08.08 15:14:55 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 7m 53.686s)
+2022.08.08 15:14:55 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:14:55 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:14:55 INFO  Starting debug proxy for [Main]
+2022.08.08 15:14:55 INFO  Trying to attach to remote debuggee VM localhost:56478 .
+2022.08.08 15:14:55 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:14:55 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:14:55 INFO  Closing debug server tcp://0.0.0.0:56474
+2022.08.08 15:15:11 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:15:11 INFO  time: compiled tutorial-for-java-programmers in 0.95s
+2022.08.08 15:15:13 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 8m 12.137s)
+2022.08.08 15:15:13 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:15:13 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:15:13 INFO  Starting debug proxy for [Main]
+2022.08.08 15:15:13 INFO  Trying to attach to remote debuggee VM localhost:56494 .
+2022.08.08 15:15:13 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:15:13 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:15:13 INFO  Closing debug server tcp://0.0.0.0:56491
+2022.08.08 15:15:16 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:15:16 INFO  time: compiled tutorial-for-java-programmers in 0.93s
+2022.08.08 15:15:17 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1h 8m 16.064s)
+2022.08.08 15:15:17 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 15:15:17 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 15:15:17 INFO  Starting debug proxy for [Main]
+2022.08.08 15:15:17 INFO  Trying to attach to remote debuggee VM localhost:56507 .
+2022.08.08 15:15:17 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 15:15:17 INFO  Canceling debug proxy for [Main]
+2022.08.08 15:15:17 INFO  Closing debug server tcp://0.0.0.0:56504
+2022.08.08 15:20:14 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:20:14 INFO  time: compiled tutorial-for-java-programmers in 0.89s
+2022.08.08 15:20:26 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 15:20:26 INFO  time: compiled tutorial-for-java-programmers in 0.9s

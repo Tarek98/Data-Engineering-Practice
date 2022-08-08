@@ -24,10 +24,6 @@ object Main extends App  {
     val dateFormat = getDateInstance(LONG, Locale.UK)
     // Infix syntax: for methods of 1 argument: abbreviates: dateFormat.format(now)
     println(dateFormat format now)
-
-    // ____________________
-    // CONTINUE REVIEW HERE
-    // ____________________
     
     /* oncePerSecond(() => 
         println("time flies...")) */
@@ -43,6 +39,10 @@ object Main extends App  {
     println(s"Expression Derivative relative to x:\n\t${deriveExpr(expr, "x")}\n")
     println(s"Expression Derivative relative to y:\n\t${deriveExpr(expr, "y")}\n\n")
 
+    // ____________________
+    // CONTINUE REVIEW HERE
+    // ____________________
+    
     val d1 = new CustomDate(2021, 11, 23)
     val d2 = new CustomDate(2021, 11, 24)
     print(s"Date1: $d1\n")
@@ -59,19 +59,23 @@ object Main extends App  {
     }
     
     // This evaluation function works by performing pattern matching on the tree "t".
-    def evaluateExpr(t: ExprTree, env: Environment): Int = t match {
-        case Sum(l,r) => evaluateExpr(l,env) + evaluateExpr(r,env)
-        case Var(n) => env(n)
-        case Const(v) => v
-    }
+    def evaluateExpr(t: ExprTree, env: Environment): Int = {
+        t match {
+            case Sum(l,r) => evaluateExpr(l,env) + evaluateExpr(r,env)
+            case Var(n) => env(n)
+            case Const(v) => v
+        }
+    } 
 
     // This derivative function works by performing pattern matching on the tree "t".
     // The parameter "v" is the derivation variable.
-    def deriveExpr(t: ExprTree, v: String): ExprTree = t match {
-        case Sum(l,r) => Sum(deriveExpr(l,v), deriveExpr(r,v))
-        case Var(n) if (v == n) => Const(1)
-        case _ => Const(0)
-    }
+    def deriveExpr(t: ExprTree, v: String): ExprTree = {
+        t match {
+            case Sum(l,r) => Sum(deriveExpr(l,v), deriveExpr(r,v))
+            case Var(n) if (v == n) => Const(1)
+            case _ => Const(0)
+        }
+    } 
 }
 
 // Basic Scala Class
