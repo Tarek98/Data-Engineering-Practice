@@ -1192,3 +1192,292 @@ Caused by: java.nio.channels.ClosedChannelException
 	... 9 more
 
 2022.05.24 11:46:09 INFO  Shut down connection with build server.
+2022.08.08 14:06:33 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.08 14:06:33 INFO  logging to file /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/metals.log
+2022.08.08 14:06:33 INFO  Started: Metals version 0.11.7 in workspace '/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers' for client Visual Studio Code 1.69.1.
+2022.08.08 14:06:34 INFO  time: initialize in 0.56s
+2022.08.08 14:06:34 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.08 14:06:35 INFO  Attempting to connect to the build server...
+2022.08.08 14:06:35 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:06:38 INFO  running '/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/6p/vmr2gcp55q1dwht_b0vct4t00000gn/T/metals2664350079670350931/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.08.08 14:06:38 WARN  no build target for: /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/metals.sbt
+2022.08.08 14:06:38 WARN  no build target for: /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/project/metals.sbt
+2022.08.08 14:06:38 INFO  skipping build import with status 'Started'
+2022.08.08 14:06:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:06:39 INFO  no build target found for /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.1.3
+2022.08.08 14:06:40 INFO  [info] welcome to sbt 1.6.2 (Homebrew Java 1.8.0_322)
+2022.08.08 14:06:42 INFO  Attempting to connect to the build server...
+2022.08.08 14:06:42 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:06:42 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:06:42 INFO  time: Connected to build server in 7.93s
+2022.08.08 14:06:42 INFO  Connected to Build server: Bloop v1.5.2
+2022.08.08 14:06:43 INFO  time: Imported build in 0.11s
+2022.08.08 14:06:43 INFO  [info] loading settings for project tutorial-for-java-programmers-build-build from metals.sbt ...
+2022.08.08 14:06:43 INFO  [info] loading project definition from /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/project
+2022.08.08 14:06:46 INFO  time: indexed workspace in 3.07s
+2022.08.08 14:06:46 INFO  [info] loading settings for project tutorial-for-java-programmers-build from metals.sbt ...
+2022.08.08 14:06:46 INFO  [info] loading project definition from /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project
+2022.08.08 14:06:49 INFO  [success] Generated .bloop/tutorial-for-java-programmers-build.json
+2022.08.08 14:06:49 INFO  [warn] Removed stale /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.bloop/playgroundcode-build.json
+2022.08.08 14:06:49 INFO  [success] Total time: 2 s, completed 8-Aug-2022 2:06:49 PM
+2022.08.08 14:06:50 INFO  [info] loading settings for project tutorial-for-java-programmers from build.sbt ...
+2022.08.08 14:06:50 INFO  [info] set current project to hello-world (in build file:/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/)
+2022.08.08 14:06:50 INFO  [success] Generated .bloop/tutorial-for-java-programmers-test.json
+2022.08.08 14:06:50 INFO  [success] Generated .bloop/tutorial-for-java-programmers.json
+2022.08.08 14:06:50 INFO  [warn] Removed stale /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.bloop/playgroundcode-test.json
+2022.08.08 14:06:50 INFO  [warn] Removed stale /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.bloop/playgroundcode.json
+2022.08.08 14:06:50 INFO  [success] Total time: 0 s, completed 8-Aug-2022 2:06:51 PM
+2022.08.08 14:06:51 INFO  time: ran 'sbt bloopInstall' in 13s
+2022.08.08 14:06:51 INFO  Disconnecting from Bloop session...
+2022.08.08 14:06:51 INFO  Shut down connection with build server.
+2022.08.08 14:06:51 INFO  Shut down connection with build server.
+2022.08.08 14:06:51 INFO  Attempting to connect to the build server...
+2022.08.08 14:06:51 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:06:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:06:51 INFO  Attempting to connect to the build server...
+2022.08.08 14:06:51 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:06:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:06:51 INFO  time: Connected to build server in 96ms
+2022.08.08 14:06:51 INFO  Connected to Build server: Bloop v1.5.2
+2022.08.08 14:06:52 INFO  time: indexed workspace in 0.86s
+error: /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/.tmp/.metals/.tmp/Main-5273641565943226635.scala is not a file
+2022.08.08 14:06:55 INFO  running '/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/6p/vmr2gcp55q1dwht_b0vct4t00000gn/T/metals3079277935627258587/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.08.08 14:06:56 INFO  [info] welcome to sbt 1.6.2 (Homebrew Java 1.8.0_322)
+2022.08.08 14:06:56 INFO  [info] loading settings for project tutorial-for-java-programmers-build-build from metals.sbt ...
+2022.08.08 14:06:58 INFO  [info] loading project definition from /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/project
+2022.08.08 14:06:58 INFO  [info] loading settings for project tutorial-for-java-programmers-build from metals.sbt ...
+2022.08.08 14:06:58 INFO  [info] loading project definition from /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project
+2022.08.08 14:07:00 INFO  [success] Generated .bloop/tutorial-for-java-programmers-build.json
+2022.08.08 14:07:00 INFO  [success] Total time: 1 s, completed 8-Aug-2022 2:07:00 PM
+2022.08.08 14:07:00 INFO  [info] loading settings for project tutorial-for-java-programmers from build.sbt ...
+2022.08.08 14:07:00 INFO  [info] set current project to hello-world (in build file:/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/)
+2022.08.08 14:07:00 INFO  [success] Generated .bloop/tutorial-for-java-programmers.json
+2022.08.08 14:07:00 INFO  [success] Generated .bloop/tutorial-for-java-programmers-test.json
+2022.08.08 14:07:00 INFO  [success] Total time: 0 s, completed 8-Aug-2022 2:07:01 PM
+2022.08.08 14:07:01 INFO  time: ran 'sbt bloopInstall' in 5.37s
+2022.08.08 14:07:01 INFO  Disconnecting from Bloop session...
+2022.08.08 14:07:01 INFO  Shut down connection with build server.
+2022.08.08 14:07:01 INFO  Shut down connection with build server.
+2022.08.08 14:07:01 INFO  Attempting to connect to the build server...
+2022.08.08 14:07:01 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:07:01 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:07:01 INFO  Attempting to connect to the build server...
+2022.08.08 14:07:01 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 14:07:01 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 14:07:01 INFO  time: Connected to build server in 63ms
+2022.08.08 14:07:01 INFO  Connected to Build server: Bloop v1.5.2
+2022.08.08 14:07:01 INFO  time: indexed workspace in 0.4s
+2022.08.08 14:08:18 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:08:22 INFO  time: compiled tutorial-for-java-programmers in 4.08s
+2022.08.08 14:08:30 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 1m 28.799s)
+2022.08.08 14:08:30 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 14:08:30 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 14:08:30 INFO  Starting debug proxy for [Main]
+2022.08.08 14:08:31 INFO  Trying to attach to remote debuggee VM localhost:54468 .
+2022.08.08 14:08:31 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 14:08:30 INFO  Canceling debug proxy for [Main]
+2022.08.08 14:08:31 INFO  Closing debug server tcp://0.0.0.0:54465
+Aug 08, 2022 2:15:01 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:15:01 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-1,offset=19
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-1,offset=19
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:15:01 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:15:01 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-10,offset=680
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-10,offset=680
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:15:05 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:15:05 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:15:06 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:15:06 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:15:06 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:15:06 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-9,offset=575
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:21:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:21:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Exception in thread "pool-7-thread-1" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1155)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:196)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	... 2 more
+Aug 08, 2022 2:32:46 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:32:47 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-10,offset=640
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-10,offset=640
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:33:07 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:33:07 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=140
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=140
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:33:08 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:33:08 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-5,offset=384
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-5,offset=384
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:33:08 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:33:09 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-5,offset=371
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-5,offset=371
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:33:09 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:33:09 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=120
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=120
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+Aug 08, 2022 2:35:04 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 2:35:04 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-8,offset=507
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-8,offset=507
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+2022.08.08 14:40:10 INFO  Deduplicating compilation of tutorial-for-java-programmers from bsp client 'Metals 0.11.7' (since 33m 9.433s)
+2022.08.08 14:40:10 INFO  tracing is disabled for protocol dap-server, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-server.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-server.trace.json
+2022.08.08 14:40:10 INFO  tracing is disabled for protocol dap-client, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/dap-client.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/dap-client.trace.json
+2022.08.08 14:40:11 INFO  Starting debug proxy for [Main]
+2022.08.08 14:40:10 INFO  Trying to attach to remote debuggee VM localhost:55389 .
+2022.08.08 14:40:10 INFO  Attaching to debuggee VM succeeded.
+2022.08.08 14:40:11 INFO  Canceling debug proxy for [Main]
+2022.08.08 14:40:10 INFO  Closing debug server tcp://0.0.0.0:55385
+Aug 08, 2022 2:40:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:40:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:40:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:40:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Aug 08, 2022 2:40:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2022.08.08 14:42:23 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:42:24 INFO  time: compiled tutorial-for-java-programmers in 1.18s
+2022.08.08 14:50:10 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:50:11 INFO  time: compiled tutorial-for-java-programmers in 1.06s
+2022.08.08 14:50:19 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:50:19 INFO  time: compiled tutorial-for-java-programmers in 0.99s
+2022.08.08 14:50:31 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:50:31 INFO  time: compiled tutorial-for-java-programmers in 0.95s
+2022.08.08 14:50:38 INFO  compiling tutorial-for-java-programmers (1 scala source)
+2022.08.08 14:50:38 INFO  time: compiled tutorial-for-java-programmers in 0.94s

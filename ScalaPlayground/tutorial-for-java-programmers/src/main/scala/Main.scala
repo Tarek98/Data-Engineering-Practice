@@ -20,14 +20,15 @@ object Main extends App  {
     // e.g. { case "x" => 5 }
     type Environment = String => Int
 
-    // Does not return a value; return type is declared as Unit.
-    /* println("Hello!") */
-
     val now = new Date
     val dateFormat = getDateInstance(LONG, Locale.UK)
     // Infix syntax: for methods of 1 argument: abbreviates: dateFormat.format(now)
     println(dateFormat format now)
 
+    // ____________________
+    // CONTINUE REVIEW HERE
+    // ____________________
+    
     /* oncePerSecond(() => 
         println("time flies...")) */
     
@@ -52,6 +53,7 @@ object Main extends App  {
     cell.set(15)
     println(s"dereferenced cell value * 2 = ${cell.get * 2}\n\n")
     
+    // Does not return a value; return type is declared as Unit.
     def oncePerSecond(callback: () => Unit): Unit = {
         while (true) { callback(); Thread sleep 1000 }
     }
