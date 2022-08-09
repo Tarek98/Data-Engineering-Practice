@@ -36,8 +36,8 @@ Create git repos for the practice codebases you already have.
 --- July 11: End ---
 
 --- August 8: Start ---
-- 0 ⌛ 1h : Review + run through scala play ground codebase. 
-- 0 ⌛ 1h : Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)... Hands-on to reinforce ideas...
+- 1h30m ⌛ 1h : ✅ ❌ Review + run through scala play ground codebase. 
+- 0 ⌛ 1h : ❌ Learn diff between Spark & Spark SQL (when to use RDD & when to use DataFrame)... Hands-on to reinforce ideas...
 --- August 8: End ---
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
