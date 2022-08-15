@@ -1844,3 +1844,6 @@ WARNING: Unmatched cancel notification for request id 1544
 2022.08.15 12:09:26 INFO  time: compiled tutorial-for-java-programmers in 1.27s[0m
 2022.08.15 12:11:41 INFO  compiling tutorial-for-java-programmers (1 scala source)[0m
 2022.08.15 12:11:41 INFO  time: compiled tutorial-for-java-programmers in 0.89s[0m
+2022.08.15 12:12:43 INFO  shutting down Metals[0m
+2022.08.15 12:12:43 INFO  Shut down connection with build server.[0m
+2022.08.15 12:12:43 INFO  Shut down connection with build server.[0m
