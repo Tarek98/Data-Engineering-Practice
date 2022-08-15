@@ -38,20 +38,19 @@ object Main extends App  {
     println(s"Expression Evaluation with (x=5, y=7): \n\t${evaluateExpr(expr, env)}\n")
     println(s"Expression Derivative relative to x:\n\t${deriveExpr(expr, "x")}\n")
     println(s"Expression Derivative relative to y:\n\t${deriveExpr(expr, "y")}\n\n")
-
-    // ____________________
-    // CONTINUE REVIEW HERE
-    // ____________________
     
-    val d1 = new CustomDate(2021, 11, 23)
+    val d1 = new CustomDate(2021, 10, 25)
     val d2 = new CustomDate(2021, 11, 24)
     print(s"Date1: $d1\n")
     print(s"Date2: $d2\n")
     print(s"Date1 <= Date2: ${d1 <= d2}\n\n")
 
     val cell = new Reference[Int]
+    var defaultInt: Int = _
+    print(s"Default value of Reference[Int] = ${cell.get}\n")
+    print(s"Default value of a Scala Int = ${defaultInt}\n")
     cell.set(15)
-    println(s"dereferenced cell value * 2 = ${cell.get * 2}\n\n")
+    println(s"Dereferenced cell value * 2 = ${cell.get * 2}\n\n")
     
     // Does not return a value; return type is declared as Unit.
     def oncePerSecond(callback: () => Unit): Unit = {
@@ -132,6 +131,7 @@ class CustomDate(y: Int, m: Int, d: Int) extends Ord {
 // -> Java programmers resort to using Object, which is the super-type of all objects.
 // -> Java's solution doesn’t work for basic types (int, long, float, etc.) and implies programming a lot of dynamic type casts.
 // -> Scala makes it possible to define generic classes (and methods) to solve this problem.
+// -> ^See first comment block in this file; "Scala is a pure object-oriented language in the sense that everything is an object" etc.
 class Reference[T] {
     // "_" represents the default value of an object of type T.
     private var contents: T = _
