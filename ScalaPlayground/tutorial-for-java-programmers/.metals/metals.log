@@ -1595,3 +1595,56 @@ Caused by: java.net.SocketException: Socket closed
 2022.08.08 15:20:14 INFO  time: compiled tutorial-for-java-programmers in 0.89s
 2022.08.08 15:20:26 INFO  compiling tutorial-for-java-programmers (1 scala source)
 2022.08.08 15:20:26 INFO  time: compiled tutorial-for-java-programmers in 0.9s
+Aug 08, 2022 5:55:03 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Aug 08, 2022 5:55:03 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=147
+scala.reflect.internal.FatalError: no context found for source-file:///Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala,line-3,offset=147
+	at scala.tools.nsc.interactive.CompilerControl.$anonfun$doLocateContext$1(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext(CompilerControl.scala:100)
+	at scala.tools.nsc.interactive.CompilerControl.doLocateContext$(CompilerControl.scala:99)
+	at scala.tools.nsc.interactive.Global.doLocateContext(Global.scala:114)
+	at scala.meta.internal.pc.PcDefinitionProvider.definitionTypedTreeAt(PcDefinitionProvider.scala:104)
+	at scala.meta.internal.pc.PcDefinitionProvider.definition(PcDefinitionProvider.scala:25)
+
+2022.08.08 18:34:24 INFO  shutting down Metals
+2022.08.08 18:34:24 INFO  Shut down connection with build server.
+2022.08.08 18:34:24 INFO  Shut down connection with build server.
+2022.08.08 18:55:56 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.08 18:55:58 INFO  logging to file /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/metals.log
+2022.08.08 18:55:58 INFO  Started: Metals version 0.11.7 in workspace '/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers' for client Visual Studio Code 1.70.0.
+2022.08.08 18:56:01 INFO  time: initialize in 3.29s
+2022.08.08 18:56:03 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.08 18:56:04 INFO  Attempting to connect to the build server...
+2022.08.08 18:56:04 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 18:56:04 INFO  skipping build import with status 'Installed'
+2022.08.08 18:56:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 18:56:15 INFO  Attempting to connect to the build server...
+2022.08.08 18:56:15 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.08 18:56:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.08 18:56:15 INFO  time: Connected to build server in 11s
+2022.08.08 18:56:15 INFO  Connected to Build server: Bloop v1.5.2
+2022.08.08 18:56:16 INFO  time: Imported build in 0.23s
+2022.08.08 18:56:21 INFO  time: indexed workspace in 5.08s
+2022.08.08 19:40:26 INFO  shutting down Metals
+2022.08.08 19:40:26 INFO  Shut down connection with build server.
+2022.08.08 19:40:26 INFO  Shut down connection with build server.
+2022.08.09 09:28:38 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/lsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.09 09:28:38 INFO  logging to file /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/metals.log
+2022.08.09 09:28:38 INFO  Started: Metals version 0.11.7 in workspace '/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers' for client Visual Studio Code 1.70.0.
+2022.08.09 09:28:39 INFO  time: initialize in 1.07s
+2022.08.09 09:28:40 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.09 09:28:41 INFO  Attempting to connect to the build server...
+2022.08.09 09:28:41 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.09 09:28:41 INFO  skipping build import with status 'Installed'
+2022.08.09 09:28:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.09 09:28:51 INFO  Attempting to connect to the build server...
+2022.08.09 09:28:51 INFO  Bloop uses /usr/local/Cellar/openjdk@8/1.8.0+322/libexec/openjdk.jdk/Contents/Home/jre defined at /Users/tarek.a/.bloop/bloop.json
+2022.08.09 09:28:51 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/project/.metals/bsp.trace.json or /Users/tarek.a/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.09 09:28:51 INFO  time: Connected to build server in 10s
+2022.08.09 09:28:51 INFO  Connected to Build server: Bloop v1.5.2
+2022.08.09 09:28:52 INFO  time: Imported build in 0.16s
+2022.08.09 09:29:01 INFO  time: indexed workspace in 9.59s
+2022.08.09 09:43:53 INFO  shutting down Metals
+2022.08.09 09:43:53 INFO  Shut down connection with build server.
+2022.08.09 09:43:53 INFO  Shut down connection with build server.
