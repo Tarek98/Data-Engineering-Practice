@@ -88,6 +88,7 @@ class ComplexNumber(real: Double, imaginary: Double) {
 }
 
 // Scala Case Class Example: Math Expression Tree: declaration of abstract super-class and case sub-classes that extend it 
+// https://docs.scala-lang.org/tour/case-classes.html
 abstract class ExprTree
 case class Sum(l: ExprTree, r: ExprTree) extends ExprTree
 case class Var(n: String) extends ExprTree

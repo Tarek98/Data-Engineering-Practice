@@ -1842,3 +1842,5 @@ WARNING: Unmatched cancel notification for request id 1544
 2022.08.15 12:09:25 WARN  Could not load snapshot text for /Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/tutorial-for-java-programmers/src/main/scala/Main.scala[0m
 2022.08.15 12:09:25 INFO  compiling tutorial-for-java-programmers (1 scala source)[0m
 2022.08.15 12:09:26 INFO  time: compiled tutorial-for-java-programmers in 1.27s[0m
+2022.08.15 12:11:41 INFO  compiling tutorial-for-java-programmers (1 scala source)[0m
+2022.08.15 12:11:41 INFO  time: compiled tutorial-for-java-programmers in 0.89s[0m
