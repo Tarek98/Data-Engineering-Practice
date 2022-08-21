@@ -46,11 +46,14 @@ Create git repos for the practice codebases you already have.
 - C*🌟 : 1h ⌛ 30m : ✅ Quick review of using interactive Scala Spark shell (similar to interactive python terminal).
 --- August 15: End ---
 
-- A*🌟 : 0 ⌛ 1h : Learn diff between Spark RDD Programming & Spark SQL: Hands-on with Spark shell to reinforce ideas.
-  - https://spark.apache.org/docs/2.4.8/sql-programming-guide.html
-  - https://spark.apache.org/docs/2.4.8/sql-programming-guide.html
+- A*🌟 : 0 ⌛ 1h : Learn diff between Spark RDD Programming & Spark SQL: 
+  - Hands-on with Spark shell to reinforce ideas.
+  - More comprehensive: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html
+  - Split into many sections: https://spark.apache.org/docs/2.4.8/sql-programming-guide.html
 - C*🌟 : 0 ⌛ 30m : Take notes on Spark cluster mode docs.
   - https://spark.apache.org/docs/3.0.0/cluster-overview.html
+
+- 0 ⌛ 30m : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
     - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
@@ -59,7 +62,6 @@ Create git repos for the practice codebases you already have.
 - 0 ⌛ 1h : [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.
 
-- 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
 
 - 0 ⌛ 1h : In Word Count sample, separate test & main code into separate projects + ensure they build.
 
