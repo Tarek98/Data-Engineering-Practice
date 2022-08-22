@@ -19,6 +19,7 @@
 - 1h ⌛ 1h : ✅ Review UW big data lectures.
 - 30m ⌛ 30m : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
 
+
 --- July 4 ---
 - 1h ⌛ 1h : ✅ [Done] Review UW big data lectures.
 - 30m ⌛ 1h : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
@@ -30,6 +31,7 @@ Create git repos for the practice codebases you already have.
 - 45m ⌛ 1h : ✅ [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.
 
+
 --- August 8 ---
 - A*🌟 : 1h30m ⌛ 1h : ✅ [WIP] Review + run through scala play ground codebase. 
 
@@ -40,17 +42,21 @@ Create git repos for the practice codebases you already have.
 
 
 --- August 22 ---
-- A*🌟 : 0 ⌛ 1h : Learn diff between Spark RDD Programming & Spark SQL: 
-  - Hands-on with Spark shell to reinforce ideas.
-  - More comprehensive: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html
-  - Split into many sections: https://spark.apache.org/docs/2.4.8/sql-programming-guide.html
-- C*🌟 : 0 ⌛ 30m : Take notes on Spark cluster mode docs.
-  - https://spark.apache.org/docs/3.0.0/cluster-overview.html
+- A*🌟 : 1h ⌛ 1h : ✅ ❌ Skim diff between Spark RDD Programming & Spark SQL 
+  - ✅ Hands-on with Spark shell to reinforce ideas.
+  - ✅ Took notes in SparkLearningsAug22.txt.
+  - ❌ Remaining section to try: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html#aggregations
+  * More comprehensive: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html (Overview & Getting Started sections are sufficient for now)
+  * Split into many sections: https://spark.apache.org/docs/latest/sql-programming-guide.html (Didn't use it but this is latest)
+- C*🌟 : 30m ⌛ 30m : ✅ Take notes on Spark cluster mode docs.
+  * https://spark.apache.org/docs/3.0.0/cluster-overview.html
+  - ✅ Took notes in SparkLearningsAug22.txt.
 
 
 
 
 - 0 ⌛ 30m : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
+    - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
     - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
