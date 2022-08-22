@@ -10,48 +10,45 @@
 & utilization of local cores as spark workers.
 
 
---- June 26: Start ---
+--- June 26 ---
 - 1h30m ⌛ 1h30m : ✅ Play around with word count app a bit more & utilization of local cores as spark workers.
 - 30m ⌛ 30m : ✅ Address TODO understanding comments in buildrun wordcount script.
---- June 26: End   ---
 
 
---- June 27: Start ---
+--- June 27 ---
 - 1h ⌛ 1h : ✅ Review UW big data lectures.
 - 30m ⌛ 30m : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
---- June 27: End   ---
 
-
---- July 4: Start ---
+--- July 4 ---
 - 1h ⌛ 1h : ✅ [Done] Review UW big data lectures.
 - 30m ⌛ 1h : ✅ [WIP] In Word Count sample, experiment with RDD partitioning & all cores utilization.
---- July 4: End   ---
 
 
---- July 11: Start ---
+--- July 11 ---
 - 45m ⌛ 30m : ✅ Setup SSH Keys for personal github account + 
 Create git repos for the practice codebases you already have.
 - 45m ⌛ 1h : ✅ [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.
---- July 11: End ---
 
-
---- August 8: Start ---
+--- August 8 ---
 - A*🌟 : 1h30m ⌛ 1h : ✅ [WIP] Review + run through scala play ground codebase. 
---- August 8: End ---
 
 
---- August 15: Start ---
+--- August 15 ---
 - A*🌟 : 45m ⌛ 30m : ✅ Review + run through scala play ground codebase. 
 - C*🌟 : 1h ⌛ 30m : ✅ Quick review of using interactive Scala Spark shell (similar to interactive python terminal).
---- August 15: End ---
 
+
+--- August 22 ---
 - A*🌟 : 0 ⌛ 1h : Learn diff between Spark RDD Programming & Spark SQL: 
   - Hands-on with Spark shell to reinforce ideas.
   - More comprehensive: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html
   - Split into many sections: https://spark.apache.org/docs/2.4.8/sql-programming-guide.html
 - C*🌟 : 0 ⌛ 30m : Take notes on Spark cluster mode docs.
   - https://spark.apache.org/docs/3.0.0/cluster-overview.html
+
+
+
 
 - 0 ⌛ 30m : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
 
@@ -61,7 +58,6 @@ Create git repos for the practice codebases you already have.
 
 - 0 ⌛ 1h : [WIP: fix build] Build UW-redeveloped/task1.scala.
     - Encouraged to use UW assignment resources in OneNote for help understanding.
-
 
 - 0 ⌛ 1h : In Word Count sample, separate test & main code into separate projects + ensure they build.
 
