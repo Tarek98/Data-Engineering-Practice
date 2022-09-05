@@ -60,6 +60,7 @@ Create git repos for the practice codebases you already have.
   - ✅[WIP] Encouraged to use UW assignment resources in OneNote for help understanding.
   - ✅ Made Great Progress : Implemented whole thing successfully from scratch without looking at solution :-)
   - ✅[WIP] Pending : Check why outputs in build run script are not properly sorted.
+  - ❌ Analyze perf & execution on spark web ui and/or history server. 
 
 --- Next In Line ---
 - 0 ⌛ 1h : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
