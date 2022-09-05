@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/tarek.a/code/Practice/SparkPlayground/redeveloped-assignment/WordCount/src/main/scala/SparkWordCount.scala:37:38: value _1 is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    val output = rdd.map(tup => (tup._1, tup._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/tarek.a/code/Practice/SparkPlayground/redeveloped-assignment/WordCount/src/main/scala/SparkWordCount.scala:37:46: value _2 is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m    val output = rdd.map(tup => (tup._1, tup._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

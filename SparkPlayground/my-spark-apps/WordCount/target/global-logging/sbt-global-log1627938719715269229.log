@@ -1,0 +1,48 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.6.2 (Homebrew Java 1.8.0_322)
+[debug] Load.defaultLoad until apply took 338.424748ms
+[debug]                 Load.loadUnit: plugins took 87.857451ms
+[debug]                 Load.loadUnit: defsScala took 0.386883ms
+[debug] [Loading] Scanning directory /Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project
+[debug]                   Load.loadUnit: mkEval took 7.91569ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 12.766723 ms
+[info] loading settings for project word-count-test-build-build from metals.sbt ...
+[debug]                     Load.resolveProject(word-count-test-build-build) took 40.77266ms
+[debug]                   Load.loadTransitive: finalizeProject(Project(id word-count-test-build-build, base: /Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project, plugins: List(<none>))) took 60.263114ms
+[debug] [Loading] Done in /Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project, returning: (word-count-test-build-build)
+[debug]                 Load.loadUnit: loadedProjectsRaw took 1775.210893ms
+[debug]                 Load.loadUnit: cleanEvalClasses took 5153.345569ms
+[debug]               Load.loadUnit(file:/Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project/, ...) took 7022.706588ms
+[debug]             Load.apply: load took 7097.918932ms
+[debug]             Load.apply: resolveProjects took 4.002827ms
+[debug]             Load.apply: finalTransforms took 59.735298ms
+[debug]             Load.apply: config.delegates took 5.705183ms
+[debug]             Load.apply: Def.make(settings)... took 307.262423ms
+[debug]             Load.apply: structureIndex took 74.297981ms
+[debug]             Load.apply: mkStreams took 1.35166ms
+[info] loading project definition from /Users/tarek.a/code/SparkPlayground/redeveloped-assignment/word-count-test/project/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true

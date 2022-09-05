@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0m[wordcount-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[wordcount-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'wordcount-build' to '/Users/tarek.a/code/Practice/SparkPlayground/redeveloped-assignment/WordCount/project/.bloop/wordcount-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/wordcount-build.json[0m

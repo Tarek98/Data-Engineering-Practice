@@ -1,0 +1,4 @@
+[debug] [word-count-test] Classpath dependencies List()
+[debug] [word-count-test] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'word-count-test' to '/Users/tarek.a/code/SparkPlayground/ece-454-redeveloped/word-count-test/.bloop/word-count-test.json'
+[success] Generated .bloop/word-count-test.json
