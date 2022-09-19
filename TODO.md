@@ -60,7 +60,16 @@ Create git repos for the practice codebases you already have.
   - ✅[WIP] Encouraged to use UW assignment resources in OneNote for help understanding.
   - ✅ Made Great Progress : Implemented whole thing successfully from scratch without looking at solution :-)
   - ✅[WIP] Pending : Check why outputs in build run script are not properly sorted.
-  - ❌ Analyze perf & execution on spark web ui and/or history server. 
+
+
+--- September 19 ---
+- A*🌟 : 0 ⌛ 1h : Continue learning diff between Spark RDD Programming & Spark SQL 
+  - RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
+- B*🌟 : 0 ⌛ 1h : Build UW-redeveloped/task2.scala
+  - Encouraged to use UW assignment resources in OneNote for help understanding.
+  - Analyze perf & execution on spark web ui and/or history server. 
+  - Pending : Check why outputs in build run script are not properly sorted.
+
 
 --- Next In Line ---
 - 0 ⌛ 1h : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
@@ -71,9 +80,6 @@ Create git repos for the practice codebases you already have.
 - 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
 
 - 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
-
-- 0 ⌛ 1h : Build UW-redeveloped/task2.scala
-    - Encouraged to use UW assignment resources in OneNote for help understanding.
 
 - 0 ⌛ 1h : Build UW-redeveloped/task3.scala
     - Encouraged to use UW assignment resources in OneNote for help understanding.
