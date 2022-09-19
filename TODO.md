@@ -53,18 +53,20 @@ Create git repos for the practice codebases you already have.
 
 
 --- September 5 ---
-- A*🌟 : 45m ⌛ 45m : ✅❌ Continue learning diff between Spark RDD Programming & Spark SQL 
+- A*🌟 : 45m ⌛ 45m : ✅[WIP] Continue learning diff between Spark RDD Programming & Spark SQL 
     - ✅ Remaining section to try: https://spark.apache.org/docs/2.3.0/sql-programming-guide.html#aggregations 
     - ✅[WIP] RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
-- B*🌟 : 1h15m ⌛ 45m : ✅❌ Work on UW-redeveloped/task1.scala.
+- B*🌟 : 1h15m ⌛ 45m : ✅[WIP] Work on UW-redeveloped/task1.scala.
   - ✅[WIP] Encouraged to use UW assignment resources in OneNote for help understanding.
   - ✅ Made Great Progress : Implemented whole thing successfully from scratch without looking at solution :-)
   - ✅[WIP] Pending : Check why outputs in build run script are not properly sorted.
 
 
 --- September 19 ---
-- A*🌟 : 0 ⌛ 1h : Continue learning diff between Spark RDD Programming & Spark SQL 
+- A*🌟 : 1h30m ⌛ 1h : ✅ Continue learning diff between Spark RDD Programming & Spark SQL 
   - RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
+- B*🌟 : 0 ⌛ 30m : ❌[WIP][In Sprint Hours] Spark Perf Tuning : Learn about how join key salting fixes spark data skew issues.
+
 - B*🌟 : 0 ⌛ 1h : Build UW-redeveloped/task2.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
   - Analyze perf & execution on spark web ui and/or history server. 
