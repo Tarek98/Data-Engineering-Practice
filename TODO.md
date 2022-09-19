@@ -67,13 +67,13 @@ Create git repos for the practice codebases you already have.
   - RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
 - B*🌟 : 0 ⌛ 30m : ❌[WIP][In Sprint Hours] Spark Perf Tuning : Learn about how join key salting fixes spark data skew issues.
 
-- B*🌟 : 0 ⌛ 1h : Build UW-redeveloped/task2.scala
+
+--- Next In Line ---
+- 0 ⌛ 1h : Build UW-redeveloped/task2.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
   - Analyze perf & execution on spark web ui and/or history server. 
   - Pending : Check why outputs in build run script are not properly sorted.
 
-
---- Next In Line ---
 - 0 ⌛ 1h : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
 
 - 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
