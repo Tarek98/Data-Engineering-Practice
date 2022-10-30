@@ -65,19 +65,17 @@ Create git repos for the practice codebases you already have.
 --- September 19 ---
 - A*🌟 : 1h30m ⌛ 1h : ✅ Continue learning diff between Spark RDD Programming & Spark SQL 
   - RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
-- B*🌟 : 0 ⌛ 30m : ❌[WIP][In Sprint Hours] Spark Perf Tuning : Learn about how join key salting fixes spark data skew issues.
 
-
---- Next In Line ---
-- 0 ⌛ 1h : Build UW-redeveloped/task2.scala
+--- October 30 ---
+- 0 ⌛ 1h30m : Build UW-redeveloped/task2.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
   - Analyze perf & execution on spark web ui and/or history server. 
   - Pending : Check why outputs in build run script are not properly sorted.
+- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
 
-- 0 ⌛ 1h : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
-
+--- Next In Line ---
 - 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
-    - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
+  - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
 
 - 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
 
