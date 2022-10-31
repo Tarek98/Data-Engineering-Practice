@@ -69,11 +69,9 @@ Create git repos for the practice codebases you already have.
 --- October 30 ---
 - ✅ 1h30m ⌛ 1h30m : Build UW-redeveloped/task2.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
-- 0 ⌛ 30-45m : Build UW-redeveloped/task3.scala
+- ✅ 45m ⌛ 30-45m : Build UW-redeveloped/task3.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
-  - Analyze perf & execution on spark web ui and/or history server. 
-  - Pending : Check why outputs in build run script are not properly sorted.
-- 0 ⌛ 30-45m : Build UW-redeveloped/task4.scala
+- ✅ 45m ⌛ 30-45m : Build UW-redeveloped/task4.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
 
 
