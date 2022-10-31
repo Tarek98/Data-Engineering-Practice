@@ -1,8 +1,8 @@
 # Apache Spark Apps
 
-### (0) ✅ Word Count
+### ✅ Word Count
 
-### (1) Movie Ratings
+### Movie Ratings
 ##### ✅ Task 1
 Get users with the highest rating for each movie.
 
