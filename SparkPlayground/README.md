@@ -1,8 +1,6 @@
 # Apache Spark Apps
 
 ### (0) ✅ Word Count
-- Finished main program.
-- :x: Experiment with RDD partitioning & all cores utilization.
 
 ### (1) Movie Ratings
 ##### ✅ Task 1
