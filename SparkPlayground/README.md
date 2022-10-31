@@ -1,6 +1,7 @@
 # Apache Spark Apps
 
-### Word Count ✅
+### Word Count
+#### ✅ Spark App 
 Intro app for most big data hands-on learning.
 
 ### Movie Ratings
