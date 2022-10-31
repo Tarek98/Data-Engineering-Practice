@@ -75,6 +75,6 @@ echo
 
 echo --- "Combining output file chunks into 1 output file"
 cd $OUTPUT
-cat $OUTPUT/* | sort -r > normalized_output.txt
+cat $OUTPUT/* | sort > normalized_output.txt
 echo "Done"
 echo

@@ -29,7 +29,7 @@ echo
 echo --- "Setting and printing variables"
 export OUTPUT=`echo $SCRIPT_DIR/outputs`
 export INPUT=$ROOT_DIR/sample_inputs/manualtestcase.txt
-export NUM_CORES=10
+export NUM_CORES=6
 echo OUTPUT=$OUTPUT
 echo INPUT=$INPUT
 echo NUM_CORES=$NUM_CORES
@@ -75,6 +75,6 @@ echo
 
 echo --- "Combining output file chunks into 1 output file"
 cd $OUTPUT
-cat $OUTPUT/* | sort -r > normalized_output.txt
+cat $OUTPUT/* | sort > normalized_output.txt
 echo "Done"
 echo

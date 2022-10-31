@@ -2,9 +2,9 @@
 
 # NOTES: +/-:
     # 1: Current spark job progress can be viewed at http://localhost:4040
-    # 2: Spark history server can be viewed at http://localhost:18080
-        # Start the spark history server by running the command $SPARK_HOME/sbin/start-history-server.sh
-    # 3: Use for development the same version of Scala that you will use on the cluster.
+    # 2: Start the spark history server by running the command $SPARK_HOME/sbin/start-history-server.sh
+    # 3: Spark history server can be viewed at http://localhost:18080
+    # 4: Use for development the same version of Scala that you will use on the cluster.
         # https://stackoverflow.com/questions/58131347/spark-java-lang-noclassdeffounderror-scala-collection-mutable-arrayseqofref
             # - Compare version of scala between Spark Web UI & local `scala -version`.
             # - ^Versions were different, which was causing issues.

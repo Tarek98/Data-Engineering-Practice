@@ -67,30 +67,29 @@ Create git repos for the practice codebases you already have.
   - RDD guide review + notes: https://spark.apache.org/docs/latest/rdd-programming-guide.html 
 
 --- October 30 ---
-- 0 ⌛ 1h30m : Build UW-redeveloped/task2.scala
+- ✅ 1h30m ⌛ 1h30m : Build UW-redeveloped/task2.scala
+  - Encouraged to use UW assignment resources in OneNote for help understanding.
+- 0 ⌛ 30-45m : Build UW-redeveloped/task3.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
   - Analyze perf & execution on spark web ui and/or history server. 
   - Pending : Check why outputs in build run script are not properly sorted.
-- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+- 0 ⌛ 30-45m : Build UW-redeveloped/task4.scala
+  - Encouraged to use UW assignment resources in OneNote for help understanding.
+
 
 --- Next In Line ---
+- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
+
+- 0 ⌛ 2h : Setup databricks cluster to get deeper understanding of ECE454 assignments at large scale.
+    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+    - Experiment with big data file sizes (datasets from Kaggle).
+
+- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+
 - 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
   - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
 
 - 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
-
-- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
-
-- 0 ⌛ 1h : Build UW-redeveloped/task3.scala
-    - Encouraged to use UW assignment resources in OneNote for help understanding.
-
-- 0 ⌛ 1h : Build UW-redeveloped/task4.scala
-    - Encouraged to use UW assignment resources in OneNote for help understanding.
-
-- 0 ⌛ 2h : Setup databricks cluster to get deeper understanding of how what you've 
-been running locally so far will work on cluster.
-    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
-    - Experiment with big data file sizes (datasets from Kaggle).
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
     - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
