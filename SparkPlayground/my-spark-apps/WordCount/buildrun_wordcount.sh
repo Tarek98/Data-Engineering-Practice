@@ -18,7 +18,6 @@
             # - Followed steps in stackoverflow post to symlink, instead of above suggestions.
 #
 
-
 echo --- "Validating user input"
 export skipBuild="true"
 while getopts :s: flag
@@ -32,10 +31,8 @@ echo
 
 
 echo --- "Ensuring current directory is set to the current path of this script"
-# TODO: understand how the SCRIPT_DIR command works, as it was copied from stack overflow; 
-#       don't be a monkey ;-)
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
-ROOT_DIR=`cd $SCRIPT_DIR && cd .. && echo $PWD`
+SCRIPT_DIR=`cd "$(dirname "$0")" && echo $PWD`;
+ROOT_DIR=$SCRIPT_DIR
 echo SCRIPT_DIR=$SCRIPT_DIR
 echo ROOT_DIR=$ROOT_DIR
 cd $SCRIPT_DIR
@@ -44,8 +41,8 @@ echo
 
 echo --- "Setting and printing variables"
 export OUTPUT=`echo $SCRIPT_DIR/outputs`
-export INPUT=$ROOT_DIR/inputs/tools.txt
-export NUM_CORES=4
+export INPUT=$ROOT_DIR/sample_inputs/microsoft-wikipedia-intro.txt
+export NUM_CORES=*
 echo OUTPUT=$OUTPUT
 echo INPUT=$INPUT
 echo NUM_CORES=$NUM_CORES

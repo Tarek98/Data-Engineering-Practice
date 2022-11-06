@@ -74,20 +74,22 @@ Create git repos for the practice codebases you already have.
 - ✅ 45m ⌛ 30-45m : Build UW-redeveloped/task4.scala
   - Encouraged to use UW assignment resources in OneNote for help understanding.
 
-
---- Next In Line ---
-- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
-
-- 0 ⌛ 2h : Setup databricks cluster to get deeper understanding of ECE454 assignments at large scale.
-    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
-    - Experiment with big data file sizes (datasets from Kaggle).
-
-- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+--- November 6 ---
+- 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
 
 - 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
   - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
 
-- 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
+- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+
+
+--- Next In Line ---
+- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
+
+- 0 ⌛ 2h : Setup databricks cluster & test run 1 ECE454 MovieRatings spark app on it.
+    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+
+- 0 ⌛ 2h : Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
     - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
