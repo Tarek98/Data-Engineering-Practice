@@ -75,13 +75,11 @@ Create git repos for the practice codebases you already have.
   - Encouraged to use UW assignment resources in OneNote for help understanding.
 
 --- November 6 ---
-- 0 ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
-
-- 0 ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
+- ✅ 30m ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
+- ✅ 1h ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
   - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
-
-- 0 ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
-
+- ✅❌ 1h30m ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+--> Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
 
 --- Next In Line ---
 - 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.

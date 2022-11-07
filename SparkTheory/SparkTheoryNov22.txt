@@ -1,0 +1,7 @@
+- Broadcast Hash Join (BHJ) VS. Sort Merge Join (SMJ)
+    - https://youtu.be/B9aY7KkTLTw
+
+    - Ignore executor side BHJ discussion as that was a suggested feature PR that got declined in the official spark repo:
+    https://github.com/apache/spark/pull/15178
+
+
