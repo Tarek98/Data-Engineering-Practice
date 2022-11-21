@@ -83,14 +83,16 @@ Create git repos for the practice codebases you already have.
 --- November 20 ---
 - 2h30m ⌛ 1h : ✅[WIP] Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
 
---- November 20 ---
+--- November 21 ---
 - 1h30m ⌛ 1h : ✅[DONE] Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
   - Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
-- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
+- 30m ⌛ 1h : ✅ Setup full IDE syntax features for Word Count sample.
 
 ** TAKE NOTES WHILE READING/WATCHING THEORY IN FUTURE **
 
 --- Next In Line ---
+- 0 ⌛ 30m : Learn & apply cleanup for gitignore files in repo.
+
 - 0 ⌛ 1h : Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
     - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
 
