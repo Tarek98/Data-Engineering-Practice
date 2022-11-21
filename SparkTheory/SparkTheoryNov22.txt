@@ -27,10 +27,27 @@
 
         Jianneng
 
-- ✅❌[Pending Review Notes : 1h] Apache Spark Core—Deep Dive—Proper Optimization Daniel Tomes Databricks
+- Apache Spark Core—Deep Dive—Proper Optimization Daniel Tomes Databricks
     - https://www.youtube.com/watch?v=daXEp4HmS-E 
 
-    - Understand the hardware
+    - Undersanding baseline performance:
+        - Check if spark actions are efficient: long stages, spills, laggard tasks...
+        - Maximize CPU utilization on each action: +70% (Monitor on Ganglia, Yarn, etc.) --> Don't fully max out on production for safety.
+
+    - Spark Partitions:
+        - Input: 
+            Spark mostly does a good job of auto sizing & splitting the input into partitions (as long as source data is splittable & of right format & compression type).
+            Spark default size ~128 MB.
+            Might want to decrease default if you explode rows in each partition OR increase if partitions < core count OR derease if using high memory footprint UDFs.
+        - Shuffle: 
+            200 default is wrong in majority of cases. 
+            Optimal Partition Count ~= Stage Input Data Size / Target Size Per Partition
+            Target Size should be 100-200 MB/partition ideally and can be tuned to minimize disk/memory spills.
+            Partition count should be a factor of number of cores to maximize utilization.
+        - Output: 
+            Changed by repartition OR coalesce OR shuffle to desired partitions then write immediately after.
+            Balances file size in output to make reads faster (more time to write but faster to read).
+            Prefer Coalesce over Repartition as it's much faster, if you are reducing number of partitions.
 
     - @1:08:46 - Why do Scala UDFs often have poor performance?
         - No way to vectorize them as of May 2019.
@@ -41,3 +58,14 @@
         i.e. group all those operations together as much as possible.
 
     - @1:13:14 - Usually there's a 5-10X improvement moving from RDDs to DataFrames.
+    
+    - @1:05:04 - How do you get the size in bytes of dataframe, in order to determine optimal shuffle partition count?
+        - Counting number of partitions & multiplying by default input partition size (128 MB).
+        - Estimate = number of rows * number of columns * average data type size per column.
+        - Can be difficult & expensive in spark to find the size of transformed DF during runtime. 
+
+    - Join Optimization: SortMergeJoin vs Broadcast Hash Join:
+        - Use SMJ when both sides are large.
+        - Use BHJ when one side is small.
+        - BHJ can be dangerous on memory footprint & garbage collection, since it collects the entire data frame on driver & builds a bigger hashmap out of it.
+        e.g. from video 130 MB DF turned into 270 MB broadcasted object --> speaker said this can be a dangerous size to broadcast (possibly due to spills?). 

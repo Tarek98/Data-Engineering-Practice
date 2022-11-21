@@ -80,16 +80,20 @@ Create git repos for the practice codebases you already have.
   - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
 - ✅[WIP] 1h30m ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
 
---- November 7 ---
-- 2h30m ⌛ 1h : ✅❌ Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
-  - ✅ Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
-- 0 ⌛ 1h : ❌ Setup full IDE syntax features for Word Count sample.
-- 0 ⌛ 1h : ❌ Setup databricks cluster & test run 1 ECE454 MovieRatings spark app on it.
-    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+--- November 20 ---
+- 2h30m ⌛ 1h : ✅[WIP] Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+
+--- November 20 ---
+- 1h30m ⌛ 1h : ✅[DONE] Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+  - Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
+- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
 
 ** TAKE NOTES WHILE READING/WATCHING THEORY IN FUTURE **
 
 --- Next In Line ---
+- 0 ⌛ 1h : Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
+    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+
 - 0 ⌛ 2h : Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
