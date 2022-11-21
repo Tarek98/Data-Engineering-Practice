@@ -4,4 +4,40 @@
     - Ignore executor side BHJ discussion as that was a suggested feature PR that got declined in the official spark repo:
     https://github.com/apache/spark/pull/15178
 
+    - Q&A: On Linked In:
+        - Tarek: 
+        Hi Jianneng, I'm a novice big data engineer at Microsoft. I recently watched your presentation on youtube
+        "On Improving Broadcast Joins in Apache Spark SQL". I really enjoyed it but would love your guidance on a 
+        question in the youtube comments, could you please reply to Sarada Rout on the video?
 
+        - Jianneng Li: 
+        Hey Tarek,
+
+        Thanks for reaching out after watching my talk, and sorry for the late reply.
+
+        It's been a while since I worked on the broadcast join project, so I unfortunately no longer have enough context to post a thoughtful reply publicly. However, I'll try my best to give you some pointers in this message.
+
+        Looking at my graph at 16:07 again, the numbers did look off: after the size of data was increased by 10x (60M to 600M), executor BHJ's time increased linearly (from under 1m to under 10m), while SMJ's time increased super-linearly (from under 1m to over 2h). If I had to guess, it was probably due to suboptimal partitioning of the input data, resulting in larger partitions than ideal to be read by each of the 18 cores. This would lead to memory contention/spilling etc, making I/O no longer the dominant component in runtime.
+
+        To understand how Spark partitioning works, I highly recommend that you watch this video: https://www.youtube.com/watch?v=daXEp4HmS-E. It explains the concept of input vs shuffle partitions, as well as guidance on ideal partition size (100-200MB IIRC).
+
+        Additionally, I'd encourage you to try and reproduce the numbers from the talk yourself. TPC-H is a well-known benchmark, and you can get the machine specs I used from the slides.
+
+        Hope that helps,
+
+        Jianneng
+
+- ✅❌[Pending Review Notes : 1h] Apache Spark Core—Deep Dive—Proper Optimization Daniel Tomes Databricks
+    - https://www.youtube.com/watch?v=daXEp4HmS-E 
+
+    - Understand the hardware
+
+    - @1:08:46 - Why do Scala UDFs often have poor performance?
+        - No way to vectorize them as of May 2019.
+        - Try your best to convert these to spark SQL functions.
+        - They cost so much because you have to serialize & deserialize.
+        - If you have to use these non-vectorize UDFs, only do that once for a spark action
+        i.e. don't keep switching back & forth between spark SQL & java UDFs.
+        i.e. group all those operations together as much as possible.
+
+    - @1:13:14 - Usually there's a 5-10X improvement moving from RDDs to DataFrames.

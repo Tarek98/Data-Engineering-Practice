@@ -78,15 +78,18 @@ Create git repos for the practice codebases you already have.
 - ✅ 30m ⌛ 30m : In Word Count sample, separate test & main code into separate projects + ensure they build.
 - ✅ 1h ⌛ 1h : In Word Count sample, continue experiment with RDD partitioning & all cores utilization.
   - https://stackoverflow.com/questions/31281225/find-out-the-partition-no-id
-- ✅❌ 1h30m ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
---> Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
+- ✅[WIP] 1h30m ⌛ 1h30m : Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
 
---- Next In Line ---
-- 0 ⌛ 1h : Setup full IDE syntax features for Word Count sample.
-
-- 0 ⌛ 2h : Setup databricks cluster & test run 1 ECE454 MovieRatings spark app on it.
+--- November 7 ---
+- 2h30m ⌛ 1h : ✅❌ Learn & jot small notes on "Practice - Spark Perf" tab group on edge.
+  - ✅ Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
+- 0 ⌛ 1h : ❌ Setup full IDE syntax features for Word Count sample.
+- 0 ⌛ 1h : ❌ Setup databricks cluster & test run 1 ECE454 MovieRatings spark app on it.
     - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
 
+** TAKE NOTES WHILE READING/WATCHING THEORY IN FUTURE **
+
+--- Next In Line ---
 - 0 ⌛ 2h : Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
