@@ -1,11 +1,9 @@
-# User-specific files
 .metals/
 .vscode/
 .bloop/
 target/
+metastore_db/
+derby.log
 metals.sbt
 .settings
-
-# Mac desktop service store files
 .DS_Store
-
