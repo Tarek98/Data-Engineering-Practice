@@ -1,4 +1,0 @@
-[debug] [scalatesting-test] Classpath dependencies List()
-[debug] [scalatesting-test] Dependencies from configurations List(scalatesting)
-[debug] Bloop wrote the configuration of project 'scalatesting-test' to '/Users/tarek.a/code/Practice/Data-Engineering-Practice/ScalaPlayground/scalatesting/.bloop/scalatesting-test.json'
-[success] Generated .bloop/scalatesting-test.json
