@@ -88,13 +88,14 @@ Create git repos for the practice codebases you already have.
   - Complete SparkTheoryNov22.txt + followup on youtube comment & check if Jianneng Li replied to related linkedin connect message.
 - 30m ⌛ 1h : ✅ Setup full IDE syntax features for Word Count sample.
 
-** TAKE NOTES WHILE READING/WATCHING THEORY IN FUTURE **
-
---- Next In Line ---
+--- November 27 ---
 - 0 ⌛ 30m : Learn & apply cleanup for gitignore files in repo.
-
 - 0 ⌛ 1h : Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
     - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+
+** ALWAYS TAKE NOTES WHILE READING/WATCHING THEORY **
+
+--- Next In Line ---
 
 - 0 ⌛ 2h : Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
