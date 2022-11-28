@@ -89,9 +89,10 @@ Create git repos for the practice codebases you already have.
 - 30m ⌛ 1h : ✅ Setup full IDE syntax features for Word Count sample.
 
 --- November 27 ---
-- 0 ⌛ 30m : Learn & apply cleanup for gitignore files in repo.
-- 0 ⌛ 1h : Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
-    - On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+- 30m ⌛ 30m : ✅ Learn & apply cleanup for gitignore files in repo.
+- 1h30m ⌛ 1h : ✅❌ [WIP] Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
+  * On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
+  - ✅ Run sample spark notebook on taxi dataset from Azure docs.   
 
 ** ALWAYS TAKE NOTES WHILE READING/WATCHING THEORY **
 

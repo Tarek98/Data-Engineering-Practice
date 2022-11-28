@@ -1,4 +1,5 @@
 import org.apache.spark.{SparkContext, SparkConf}
+// import org.apache.spark.sql.SparkSession
 
 object Task4 {
     def main(args: Array[String]): Unit = {
@@ -22,5 +23,7 @@ object Task4 {
             .flatMap(line => line.map(tuple => s"${tuple._1._1},${tuple._1._2},${tuple._2}"))
 
         output.saveAsTextFile(args(1))
+
+        // val spark = SparkSession.builder().getOrCreate()
     }
 }

@@ -39,6 +39,7 @@
             Spark mostly does a good job of auto sizing & splitting the input into partitions (as long as source data is splittable & of right format & compression type).
             Spark default size ~128 MB.
             Might want to decrease default if you explode rows in each partition OR increase if partitions < core count OR derease if using high memory footprint UDFs.
+            Partition size is controlled by spark.conf.set("spark.sql.files.maxPartitionBytes", ...)
         - Shuffle: 
             200 default is wrong in majority of cases. 
             Optimal Partition Count ~= Stage Input Data Size / Target Size Per Partition
