@@ -12,13 +12,13 @@
 			"driverCores": 4,
 			"executorMemory": "28g",
 			"executorCores": 4,
-			"numExecutors": 2,
+			"numExecutors": 3,
 			"runAsWorkspaceSystemIdentity": false,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
-				"spark.dynamicAllocation.minExecutors": "2",
-				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "91172c97-d389-48d1-8bed-0755e1fed449"
+				"spark.dynamicAllocation.minExecutors": "3",
+				"spark.dynamicAllocation.maxExecutors": "3",
+				"spark.autotune.trackingId": "601ff4b6-c909-4372-bb91-3c6bbc9c3065"
 			}
 		},
 		"metadata": {
@@ -46,7 +46,7 @@
 				"memory": 28,
 				"automaticScaleJobs": false
 			},
-			"sessionKeepAliveTimeout": 30
+			"sessionKeepAliveTimeout": 60
 		},
 		"cells": [
 			{
@@ -65,7 +65,7 @@
 				"source": [
 					"spark.catalog.clearCache()"
 				],
-				"execution_count": 16
+				"execution_count": 23
 			},
 			{
 				"cell_type": "code",
@@ -81,18 +81,21 @@
 					}
 				},
 				"source": [
-					"// Default setting is 134217728 (128 MiB)\n",
+					"// Setting the maxPartitionBytes controls the number of input partitions.\n",
+					"// Default setting is 134217728 (128 MiB); Default is usually pretty good, except for some edge case usages (see notes).\n",
+					"\n",
+					"spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 134217728)\n",
 					"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 320000)\n",
-					"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 40005)"
+					"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 106672)"
 				],
-				"execution_count": 17
+				"execution_count": 24
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"val taxiDF = spark.read.parquet(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/NYCTripSmall.parquet\")"
 				],
-				"execution_count": 9
+				"execution_count": 25
 			},
 			{
 				"cell_type": "code",
@@ -110,7 +113,7 @@
 				"source": [
 					"taxiDF.cache()"
 				],
-				"execution_count": 10
+				"execution_count": 26
 			},
 			{
 				"cell_type": "code",
@@ -128,7 +131,7 @@
 				"source": [
 					"taxiDF.count()"
 				],
-				"execution_count": 11
+				"execution_count": 27
 			},
 			{
 				"cell_type": "code",
@@ -147,7 +150,7 @@
 				"source": [
 					"display(taxiDF.limit(10))"
 				],
-				"execution_count": 12
+				"execution_count": 28
 			},
 			{
 				"cell_type": "code",
@@ -165,7 +168,7 @@
 				"source": [
 					"taxiDF.printSchema"
 				],
-				"execution_count": 13
+				"execution_count": 29
 			},
 			{
 				"cell_type": "code",
@@ -181,12 +184,38 @@
 					}
 				},
 				"source": [
-					"spark.sql(\"CREATE DATABASE IF NOT EXISTS nyctaxi\")\n",
-					"taxiDF.write.mode(\"overwrite\").saveAsTable()\n",
+					"taxiDF.createOrReplaceTempView(\"taxiTrips\")\n",
 					"\n",
-					"df.write.mode(\"overwrite\").saveAsTable(\"nyctaxi.trip\")"
+					"val df = spark.sql(\"\"\"\n",
+					"   SELECT passenger_count,\n",
+					"       SUM(trip_distance) as SumTripDistance,\n",
+					"       AVG(trip_distance) as AvgTripDistance\n",
+					"   FROM taxiTrips\n",
+					"   WHERE trip_distance > 0 AND passenger_count > 0\n",
+					"   GROUP BY passenger_count\n",
+					"   ORDER BY passenger_count\n",
+					"\"\"\")"
 				],
-				"execution_count": 15
+				"execution_count": 30
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"display(df)"
+				],
+				"execution_count": 31
 			},
 			{
 				"cell_type": "code",
