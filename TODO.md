@@ -90,15 +90,22 @@ Create git repos for the practice codebases you already have.
 
 --- November 27 ---
 - 30m ⌛ 30m : ✅ Learn & apply cleanup for gitignore files in repo.
-- 1h30m ⌛ 1h : ✅❌ [WIP] Setup synapse cluster & test run 1 ECE454 MovieRatings spark app on it.
-  * On waterloo edu account that has monthly free $200 azure credits (MSFT employee benefit).
-  - ✅ Run sample spark notebook on taxi dataset from Azure docs.   
+- 1h30m ⌛ 1h : ✅ [WIP] Setup synapse cluster & test run 1 MovieRatings spark app on it.
+  - ✅ Run sample spark notebook on taxi dataset from Azure docs.
+
+--- November 28 ---
+- 2h ⌛ 2h : ✅❌ [WIP] Setup synapse cluster & test run MovieRatings Task 1 with Kaggle data on it.
+  * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
+  - ✅ Run sample spark notebook on taxi dataset from Azure docs.
+  - ✅ Sync workspace on github.
+  - ✅ Experiment with how to get all executors working on dataframe (recall input partitions size config).
+  - ✅❌ Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
+  - Run task 1 from MovieRatings on cluster as job.
+  - Follow through with plan in SparkGym/README.md.
 
 ** ALWAYS TAKE NOTES WHILE READING/WATCHING THEORY **
 
 --- Next In Line ---
-
-- 0 ⌛ 2h : Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
     - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 

@@ -70,3 +70,4 @@
         - Use BHJ when one side is small.
         - BHJ can be dangerous on memory footprint & garbage collection, since it collects the entire data frame on driver & builds a bigger hashmap out of it.
         e.g. from video 130 MB DF turned into 270 MB broadcasted object --> speaker said this can be a dangerous size to broadcast (possibly due to spills?). 
+
