@@ -13,7 +13,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "869197da-ed21-4f10-ada2-03b57c471764"
+				"spark.autotune.trackingId": "06180a08-128b-4e51-915c-33e935781683"
 			}
 		},
 		"metadata": {
@@ -32,7 +32,7 @@
 			{
 				"cell_type": "code",
 				"source": [
-					""
+					"val movieDF = spark.read.parquet(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/NYCTripSmall.parquet\")"
 				],
 				"execution_count": null
 			}
