@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "3",
 				"spark.dynamicAllocation.maxExecutors": "3",
-				"spark.autotune.trackingId": "4da95b88-3b8b-4c1c-859d-f88f24103366"
+				"spark.autotune.trackingId": "5f741d53-51f6-49f2-b4cf-05d6b8f99cf5"
 			}
 		},
 		"metadata": {
@@ -64,9 +64,46 @@
 				"source": [
 					"// Source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset\n",
 					"// From docs: JSON Lines (newline-delimited JSON) is supported by default. For JSON (one record per file), set the multiLine option to true.\n",
-					"val movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
+					"var movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
 				],
-				"execution_count": 4
+				"execution_count": 11
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"movieDF = movieDF.repartition(sc.defaultParallelism)\n",
+					"movieDF.persist()"
+				],
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"movieDF.printSchema"
+				],
+				"execution_count": 18
 			},
 			{
 				"cell_type": "code",
@@ -85,7 +122,26 @@
 					"movieDF.count()\n",
 					"// Dataset contains around 5.6 million reviews as shown in kaggle homepage "
 				],
-				"execution_count": 5
+				"execution_count": 13
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"movieDF.where($\"spoiler_tag\" === 1).count()\n",
+					"// Dataset contains around 1.2 million spoiler reviews as shown in kaggle homepage "
+				],
+				"execution_count": 20
 			},
 			{
 				"cell_type": "code",
@@ -104,7 +160,7 @@
 				"source": [
 					"display(movieDF.take(10))"
 				],
-				"execution_count": 6
+				"execution_count": 16
 			},
 			{
 				"cell_type": "code",
@@ -117,12 +173,18 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
-					"movieDF.printSchema"
+					"// Get reviewer names with the highest rating for each movie.\n",
+					"//  - Test on a small subset of the data (5-10 movies).\n",
+					"//  - Expand to full dataset.\n",
+					"\n",
+					"val taskOneDF = movieDF.groupBy($\"movie\").count()\n",
+					"display(taskOneDF)"
 				],
-				"execution_count": 7
+				"execution_count": 25
 			},
 			{
 				"cell_type": "code",
@@ -138,7 +200,12 @@
 					}
 				},
 				"source": [
-					""
+					"// val taskOneDF = textFile.map(line => line.split(\",\"))\n",
+					"//     .map(line => line.map(x => if (x == \"\") \"0\" else x))\n",
+					"//     .map(line => (line(0), line.drop(1)))\n",
+					"//     .map(t => (t._1, t._2.zipWithIndex, t._2.max))\n",
+					"//     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))\n",
+					"//     .map(t => t._1 + \",\" + t._2.mkString(\",\"))"
 				],
 				"execution_count": null
 			}
