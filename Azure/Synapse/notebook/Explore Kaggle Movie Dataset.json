@@ -12,12 +12,12 @@
 			"driverCores": 4,
 			"executorMemory": "28g",
 			"executorCores": 4,
-			"numExecutors": 2,
+			"numExecutors": 3,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
-				"spark.dynamicAllocation.minExecutors": "2",
-				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "e6f7d306-f228-41a9-812f-b9bda7168bf1"
+				"spark.dynamicAllocation.minExecutors": "3",
+				"spark.dynamicAllocation.maxExecutors": "3",
+				"spark.autotune.trackingId": "4da95b88-3b8b-4c1c-859d-f88f24103366"
 			}
 		},
 		"metadata": {
@@ -50,11 +50,79 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
 				"source": [
-					"val movieDF = spark.read.json(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")\n",
-					"movieDF.count()"
+					"// Source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset\n",
+					"// From docs: JSON Lines (newline-delimited JSON) is supported by default. For JSON (one record per file), set the multiLine option to true.\n",
+					"val movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
 				],
-				"execution_count": 3
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"movieDF.count()\n",
+					"// Dataset contains around 5.6 million reviews as shown in kaggle homepage "
+				],
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"display(movieDF.take(10))"
+				],
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"movieDF.printSchema"
+				],
+				"execution_count": 7
 			},
 			{
 				"cell_type": "code",
