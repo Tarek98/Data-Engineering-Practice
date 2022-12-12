@@ -7,3 +7,4 @@ derby.log
 metals.sbt
 .settings
 .DS_Store
+big-file-input.json

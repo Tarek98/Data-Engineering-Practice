@@ -16,14 +16,12 @@ For each user, output the user's column number and the total number of ratings f
 ##### ✅ Task 4
 For each pair of movies, compute the number of users who assigned the same (non-blank) rating to both movies.
 
-### 🚧 Kaggle Movie Reviews
-##### ✅❌ Exploration
+### Kaggle Movie Reviews
+##### ✅ Exploration
 Run a couple spark transforms on Synapse notebook for the dataset: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
 
 ##### Task A
 Get reviewer names with the highest rating for each movie.
-- Test on a small subset of the data (5-10 movies).
-- Expand to full dataset.
 
 ##### Task B
 ...

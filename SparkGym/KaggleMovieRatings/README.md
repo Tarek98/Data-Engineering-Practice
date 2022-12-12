@@ -1,0 +1,1 @@
+Using Spark 3.3.1 with corresponding Scala version 2.12.15 here, as lower Scala versions do not support evaluating expressions on VSCode debugger.

@@ -104,9 +104,20 @@ Create git repos for the practice codebases you already have.
 --- December 4 ---
 - 2h30m ⌛ 2h : ✅ Setup synapse cluster & test run MovieRatings Task 1 with Kaggle data on it.
   * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
-  - ✅❌ Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
-  - ✅❌ Follow through with plan in SparkGym/README.md.
-  - Run task 1 from MovieRatings on cluster as job.
+  - ✅ Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
+
+--- December 11 ---
+- 3h ⌛ 2h : ✅❌ Test run Kaggle MovieRatings Task 1 with synapse cluster.
+  * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
+  * Task 1: Get reviewer names with the highest rating for each movie.
+    - Test on a small subset of the data (5-10 movies).
+    - Expand to full dataset.
+  - ✅❌ Work on code implementation with DFs instead of RDDs in Synapse notebook & local instance. 
+  - Upgrade spark version to 3.3.1 with Scala 2.12.15 for synapse cluster.
+    - Note: This is what's used on local instance for full VS Code debugging support.
+
+
+
 
 ** ALWAYS TAKE NOTES WHILE READING/WATCHING THEORY **
 
