@@ -10,57 +10,39 @@ object KaggleMovies {
     def main(args: Array[String]): Unit = {
         val spark = SparkSession.builder().master("local[4]").appName("KaggleMovies").getOrCreate()
         val sc = spark.sparkContext
-        // spark.conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
 
-
-        // NOTE: this input file was git ignored since it's too big for the GitHub repo: see sample.json in https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
+        // This input file was git ignored since it's too big for the GitHub repo: using sample.json from https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
         var movieDF = spark.read.format("json").option("multiLine","true").load("./big-file-input.json")
+            .withColumn("rating", col("rating").cast(IntegerType))
 
-        // START: Task 1
+        val testMovies = movieDF.where(col("movie").contains("Kill Bill"))
 
-        val x = movieDF.where(col("spoiler_tag") === 1).count()
+        // START: Task 1: Get reviewer names with the highest rating for each movie.
+        val allRatings = testMovies.select("movie", "reviewer", "rating")
 
-
-        val subset = movieDF.where(col("movie").contains("Kill Bill"))
-            .groupBy(col("movie")).count()
-            .select(col("movie"))
-            .map(row => row.getString(0), Encoders.STRING)
-            .collect()
-
-
-        // val t1 = movieDF.where(col("movie").isin(subset:_*))
-        //     .withColumn("ratingNum", col("rating").cast(IntegerType))
-        //     .groupBy(col("movie"))
-        //     .agg(collect_list("ratingNum"))
-
-        // TODO: Use select optimization instead of withColumn.
-        // val columns = t1.columns 
-
-        val t1 = movieDF.where(col("movie").isin(subset:_*))
-            .withColumn("ratingNum", col("rating").cast(IntegerType))
+        val maxRatings = testMovies
             .groupBy(col("movie"))
-            .agg(collect_list(concat(col("reviewer"),lit(" = "),col("rating"))).as("ratingList"), max("ratingNum"))
+            .agg(max(col("rating")).as("rating"))
 
-        val y = 2
-
-        // t1.select(col("movie"), col("ratingList").split(" = ")(0)).show()
-
-
-        // TODO: COULD try using a join instead --> (movie,maxRating) & (movie,reviewer,rating)
-        // BEST to try both approaches to get stronger grasp of Spark SQL though :-)
-        
-
-        // val textFile = sc.textFile(args(0))
-
-        // val output = textFile.map(line => line.split(","))
-        //     .map(line => line.map(x => if (x == "") "0" else x))
-        //     .map(line => (line(0), line.drop(1)))
-        //     .map(t => (t._1, t._2.zipWithIndex, t._2.max))
-        //     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))
-        //     .map(t => t._1 + "," + t._2.mkString(","))
-
-        // output.saveAsTextFile(args(1))
-
+        val res = allRatings.join(maxRatings, Seq("movie", "rating"), "inner")
+            .groupBy(col("movie"))
+            .agg(collect_list(col("reviewer")).as("maxRatingReviewers"))
         // END: Task 1
+
+
+        // Debug breakpoint
+        val y = 2
     }
 }
+
+
+/*
+// Show sample table in debug console
+movieDF.display(false)
+
+val testMovies = movieDF.where(col("movie").contains("Kill Bill"))
+    .groupBy(col("movie")).count()
+    .select(col("movie"))
+    .map(row => row.getString(0), Encoders.STRING)
+    .collect()
+*/
