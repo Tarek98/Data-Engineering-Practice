@@ -1,5 +1,5 @@
 {
-	"name": "Test MovieRatings Task 1",
+	"name": "MovieRatings Task 1",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -13,7 +13,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "6490c421-89c7-46b6-b406-c6520c521898"
+				"spark.autotune.trackingId": "af27d7d2-f443-44c8-b07e-2f6cdc8492b0"
 			}
 		},
 		"metadata": {

@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "3",
 				"spark.dynamicAllocation.maxExecutors": "3",
-				"spark.autotune.trackingId": "039e1fa9-6d77-45e8-9128-af847c2db580"
+				"spark.autotune.trackingId": "94954716-6875-47bc-b21a-04fbcc88b828"
 			}
 		},
 		"metadata": {
@@ -65,7 +65,7 @@
 					"import org.apache.spark.sql.functions._\n",
 					"import org.apache.spark.sql.types._"
 				],
-				"execution_count": 54
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -85,7 +85,7 @@
 					"// From docs: JSON Lines (newline-delimited JSON) is supported by default. For JSON (one record per file), set the multiLine option to true.\n",
 					"var movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
 				],
-				"execution_count": 11
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -104,7 +104,7 @@
 					"movieDF = movieDF.repartition(sc.defaultParallelism)\n",
 					"movieDF.persist()"
 				],
-				"execution_count": 12
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -122,7 +122,7 @@
 				"source": [
 					"movieDF.printSchema"
 				],
-				"execution_count": 18
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -141,7 +141,7 @@
 					"movieDF.count()\n",
 					"// Dataset contains around 5.6 million reviews as shown in kaggle homepage "
 				],
-				"execution_count": 13
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
@@ -160,7 +160,7 @@
 					"movieDF.where($\"spoiler_tag\" === 1).count()\n",
 					"// Dataset contains around 1.2 million spoiler reviews as shown in kaggle homepage "
 				],
-				"execution_count": 20
+				"execution_count": 6
 			},
 			{
 				"cell_type": "code",
@@ -179,7 +179,7 @@
 				"source": [
 					"display(movieDF.take(10))"
 				],
-				"execution_count": 16
+				"execution_count": 7
 			},
 			{
 				"cell_type": "code",
@@ -196,10 +196,6 @@
 					"collapsed": false
 				},
 				"source": [
-					"// Get reviewer names with the highest rating for each movie.\n",
-					"//  - Test on a small subset of the data.\n",
-					"//  - Expand to full dataset.\n",
-					"\n",
 					"val subset = movieDF.where($\"movie\".contains(\"Lost:\"))\n",
 					"    .groupBy($\"movie\").count()\n",
 					"    .where($\"count\" === 5)\n",
@@ -209,7 +205,7 @@
 					"    .map(row => row.getString(0))\n",
 					"    .collect()"
 				],
-				"execution_count": 45
+				"execution_count": 8
 			},
 			{
 				"cell_type": "code",
@@ -233,7 +229,50 @@
 					"\n",
 					"display(taskOneDF)"
 				],
-				"execution_count": 58
+				"execution_count": 9
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"//   - Get reviewer names with the highest rating for each movie.\n",
+					"//   - Test on a small subset of the data (5-10 movies).\n",
+					"//   - Expand to full dataset."
+				],
+				"execution_count": null
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"val taskOneDF = movieDF.where($\"movie\".isin(subset:_*))\n",
+					"    .withColumn(\"ratingNum\", col(\"rating\").cast(IntegerType))\n",
+					"    .groupBy($\"movie\")\n",
+					"    .\n",
+					"\n",
+					"display(taskOneDF)"
+				],
+				"execution_count": 12
 			},
 			{
 				"cell_type": "code",
@@ -256,7 +295,7 @@
 					"//     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))\n",
 					"//     .map(t => t._1 + \",\" + t._2.mkString(\",\"))"
 				],
-				"execution_count": null
+				"execution_count": 10
 			}
 		]
 	}
