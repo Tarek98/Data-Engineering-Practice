@@ -13,6 +13,7 @@ object KaggleMovies {
         // spark.conf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
 
 
+        // NOTE: this input file was git ignored since it's too big for the GitHub repo: see sample.json in https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset
         var movieDF = spark.read.format("json").option("multiLine","true").load("./big-file-input.json")
 
         // START: Task 1
