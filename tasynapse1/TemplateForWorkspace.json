@@ -9,7 +9,8 @@
 		},
 		"tasynapse1-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'tasynapse1-WorkspaceDefaultSqlServer'"
+			"metadata": "Secure string for 'connectionString' of 'tasynapse1-WorkspaceDefaultSqlServer'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:tasynapse1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"tasynapse1-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
@@ -93,7 +94,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/Tutorial')]",
+			"name": "[concat(parameters('workspaceName'), '/Explore Kaggle Movie Dataset')]",
 			"type": "Microsoft.Synapse/workspaces/notebooks",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -108,21 +109,20 @@
 					"driverCores": 4,
 					"executorMemory": "28g",
 					"executorCores": 4,
-					"numExecutors": 2,
-					"runAsWorkspaceSystemIdentity": false,
+					"numExecutors": 3,
 					"conf": {
 						"spark.dynamicAllocation.enabled": "false",
-						"spark.dynamicAllocation.minExecutors": "2",
-						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "470162d1-35ef-41f9-94f8-f71cc74f80de"
+						"spark.dynamicAllocation.minExecutors": "3",
+						"spark.dynamicAllocation.maxExecutors": "3",
+						"spark.autotune.trackingId": "7fae7e5f-acac-4138-808e-4a4a61571910"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
 					"enableDebugMode": false,
 					"kernelspec": {
-						"name": "synapse_pyspark",
-						"display_name": "Synapse PySpark"
+						"name": "synapse_spark",
+						"display_name": "scala"
 					},
 					"language_info": {
 						"name": "scala"
@@ -159,10 +159,10 @@
 							}
 						},
 						"source": [
-							"spark.catalog.clearCache()"
+							"spark.version"
 						],
 						"outputs": [],
-						"execution_count": 16
+						"execution_count": 36
 					},
 					{
 						"cell_type": "code",
@@ -178,21 +178,449 @@
 							}
 						},
 						"source": [
-							"// Default setting is 134217728 (128 MiB)\n",
-							"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 320000)\n",
-							"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 40005)"
+							"import org.apache.spark.sql.functions._\n",
+							"import org.apache.spark.sql.types._"
 						],
 						"outputs": [],
-						"execution_count": 17
+						"execution_count": 1
 					},
 					{
 						"cell_type": "code",
-						"metadata": {},
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"// Source: https://www.kaggle.com/datasets/ebiswas/imdb-review-dataset\n",
+							"// From docs: JSON Lines (newline-delimited JSON) is supported by default. For JSON (one record per file), set the multiLine option to true.\n",
+							"var movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
+						],
+						"outputs": [],
+						"execution_count": 2
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"movieDF = movieDF.repartition(sc.defaultParallelism)\n",
+							"movieDF.persist()"
+						],
+						"outputs": [],
+						"execution_count": 3
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"movieDF.printSchema"
+						],
+						"outputs": [],
+						"execution_count": 4
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"movieDF.count()\n",
+							"// Dataset contains around 5.6 million reviews as shown in kaggle homepage "
+						],
+						"outputs": [],
+						"execution_count": 5
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"movieDF.where($\"spoiler_tag\" === 1).count()\n",
+							"// Dataset contains around 1.2 million spoiler reviews as shown in kaggle homepage "
+						],
+						"outputs": [],
+						"execution_count": 6
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"display(movieDF.take(10))"
+						],
+						"outputs": [],
+						"execution_count": 7
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"val testMoviesList = movieDF.where($\"movie\".contains(\"Lost:\"))\n",
+							"    .groupBy($\"movie\").count()\n",
+							"    .where($\"count\" === 5)\n",
+							"    .orderBy($\"movie\")\n",
+							"    .limit(4)\n",
+							"    .select($\"movie\")\n",
+							"    .map(row => row.getString(0))\n",
+							"    .collect()\n",
+							"\n",
+							"testMoviesList.map('\"' + _ +'\"')"
+						],
+						"outputs": [],
+						"execution_count": 79
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"// Task 1 Description:\n",
+							"//   - Get reviewer names with the highest rating for each movie.\n",
+							"//   - Test on a small subset of the data (5-10 movies).\n",
+							"//   - Expand to full dataset."
+						],
+						"outputs": [],
+						"execution_count": 65
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"// Task 1 Test:\n",
+							"\n",
+							"val testMoviesDf = movieDF.where($\"movie\".isin(testMoviesList:_*)).withColumn(\"rating\",$\"rating\".cast(IntegerType))\n",
+							"\n",
+							"val allRatings = testMoviesDf\n",
+							"    .select(\"movie\", \"reviewer\", \"rating\")\n",
+							"\n",
+							"val maxRatings = testMoviesDf\n",
+							"    .groupBy(col(\"movie\"))\n",
+							"    .agg(max(col(\"rating\")).as(\"rating\"))\n",
+							"\n",
+							"val t1ResultDf = allRatings.join(maxRatings, Seq(\"movie\", \"rating\"), \"inner\")\n",
+							"    .groupBy(col(\"movie\"),col(\"rating\").as(\"maxRating\"))\n",
+							"    .agg(collect_list(col(\"reviewer\")).as(\"maxRatingReviewers\"))\n",
+							"\n",
+							"display(t1ResultDf)"
+						],
+						"outputs": [],
+						"execution_count": 80
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"display(testMoviesDf.sort($\"movie\".asc, $\"rating\".desc))"
+						],
+						"outputs": [],
+						"execution_count": 81
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"// Task 1 Prod:\n",
+							"\n",
+							"val prodMoviesDf = movieDF.withColumn(\"rating\",$\"rating\".cast(IntegerType))\n",
+							"\n",
+							"val allRatings = prodMoviesDf\n",
+							"    .select(\"movie\", \"reviewer\", \"rating\")\n",
+							"\n",
+							"val maxRatings = prodMoviesDf\n",
+							"    .groupBy(col(\"movie\"))\n",
+							"    .agg(max(col(\"rating\")).as(\"rating\"))\n",
+							"\n",
+							"val t1ResultDf = allRatings.join(maxRatings, Seq(\"movie\", \"rating\"), \"inner\")\n",
+							"    .groupBy(col(\"movie\"),col(\"rating\").as(\"maxRating\"))\n",
+							"    .agg(collect_list(col(\"reviewer\")).as(\"maxRatingReviewers\"))\n",
+							"    .withColumn(\"countOfMaxRatingReviewers\", size($\"maxRatingReviewers\"))\n",
+							"\n",
+							"display(t1ResultDf.sort($\"countOfMaxRatingReviewers\".desc).limit(100))"
+						],
+						"outputs": [],
+						"execution_count": 92
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"// val taskOneDF = textFile.map(line => line.split(\",\"))\n",
+							"//     .map(line => line.map(x => if (x == \"\") \"0\" else x))\n",
+							"//     .map(line => (line(0), line.drop(1)))\n",
+							"//     .map(t => (t._1, t._2.zipWithIndex, t._2.max))\n",
+							"//     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))\n",
+							"//     .map(t => t._1 + \",\" + t._2.mkString(\",\"))"
+						],
+						"outputs": [],
+						"execution_count": 74
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/MovieRatings Task 1')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 2,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "2",
+						"spark.dynamicAllocation.maxExecutors": "2",
+						"spark.autotune.trackingId": "af27d7d2-f443-44c8-b07e-2f6cdc8492b0"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"enableDebugMode": false,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "python"
+					},
+					"language_info": {
+						"name": "python"
+					},
+					"sessionKeepAliveTimeout": 30
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"source": [
+							""
+						],
+						"outputs": [],
+						"execution_count": null
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Tutorial')]",
+			"type": "Microsoft.Synapse/workspaces/notebooks",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"nbformat": 4,
+				"nbformat_minor": 2,
+				"bigDataPool": {
+					"referenceName": "SparkGymPool",
+					"type": "BigDataPoolReference"
+				},
+				"sessionProperties": {
+					"driverMemory": "28g",
+					"driverCores": 4,
+					"executorMemory": "28g",
+					"executorCores": 4,
+					"numExecutors": 3,
+					"runAsWorkspaceSystemIdentity": false,
+					"conf": {
+						"spark.dynamicAllocation.enabled": "false",
+						"spark.dynamicAllocation.minExecutors": "3",
+						"spark.dynamicAllocation.maxExecutors": "3",
+						"spark.autotune.trackingId": "601ff4b6-c909-4372-bb91-3c6bbc9c3065"
+					}
+				},
+				"metadata": {
+					"saveOutput": true,
+					"enableDebugMode": false,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
+					"language_info": {
+						"name": "scala"
+					},
+					"a365ComputeOptions": {
+						"id": "/subscriptions/0297bde2-763f-452d-b2a2-75185fad29de/resourceGroups/TASynapseRG/providers/Microsoft.Synapse/workspaces/tasynapse1/bigDataPools/SparkGymPool",
+						"name": "SparkGymPool",
+						"type": "Spark",
+						"endpoint": "https://tasynapse1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/SparkGymPool",
+						"auth": {
+							"type": "AAD",
+							"authResource": "https://dev.azuresynapse.net"
+						},
+						"sparkVersion": "3.2",
+						"nodeCount": 4,
+						"cores": 4,
+						"memory": 28
+					},
+					"sessionKeepAliveTimeout": 60
+				},
+				"cells": [
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"spark.catalog.clearCache()"
+						],
+						"outputs": [],
+						"execution_count": 23
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							}
+						},
+						"source": [
+							"// Setting the maxPartitionBytes controls the number of input partitions.\n",
+							"// Default setting is 134217728 (128 MiB); Default is usually pretty good, except for some edge case usages (see notes).\n",
+							"\n",
+							"spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 134217728)\n",
+							"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 320000)\n",
+							"// spark.conf.set(\"spark.sql.files.maxPartitionBytes\", 106672)"
+						],
+						"outputs": [],
+						"execution_count": 24
+					},
+					{
+						"cell_type": "code",
 						"source": [
 							"val taxiDF = spark.read.parquet(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/NYCTripSmall.parquet\")"
 						],
 						"outputs": [],
-						"execution_count": 9
+						"execution_count": 25
 					},
 					{
 						"cell_type": "code",
@@ -211,7 +639,7 @@
 							"taxiDF.cache()"
 						],
 						"outputs": [],
-						"execution_count": 10
+						"execution_count": 26
 					},
 					{
 						"cell_type": "code",
@@ -230,7 +658,7 @@
 							"taxiDF.count()"
 						],
 						"outputs": [],
-						"execution_count": 11
+						"execution_count": 27
 					},
 					{
 						"cell_type": "code",
@@ -250,7 +678,7 @@
 							"display(taxiDF.limit(10))"
 						],
 						"outputs": [],
-						"execution_count": 12
+						"execution_count": 28
 					},
 					{
 						"cell_type": "code",
@@ -269,7 +697,7 @@
 							"taxiDF.printSchema"
 						],
 						"outputs": [],
-						"execution_count": 13
+						"execution_count": 29
 					},
 					{
 						"cell_type": "code",
@@ -285,13 +713,40 @@
 							}
 						},
 						"source": [
-							"spark.sql(\"CREATE DATABASE IF NOT EXISTS nyctaxi\")\n",
-							"taxiDF.write.mode(\"overwrite\").saveAsTable()\n",
+							"taxiDF.createOrReplaceTempView(\"taxiTrips\")\n",
 							"\n",
-							"df.write.mode(\"overwrite\").saveAsTable(\"nyctaxi.trip\")"
+							"val df = spark.sql(\"\"\"\n",
+							"   SELECT passenger_count,\n",
+							"       SUM(trip_distance) as SumTripDistance,\n",
+							"       AVG(trip_distance) as AvgTripDistance\n",
+							"   FROM taxiTrips\n",
+							"   WHERE trip_distance > 0 AND passenger_count > 0\n",
+							"   GROUP BY passenger_count\n",
+							"   ORDER BY passenger_count\n",
+							"\"\"\")"
 						],
 						"outputs": [],
-						"execution_count": 15
+						"execution_count": 30
+					},
+					{
+						"cell_type": "code",
+						"metadata": {
+							"jupyter": {
+								"source_hidden": false,
+								"outputs_hidden": false
+							},
+							"nteract": {
+								"transient": {
+									"deleting": false
+								}
+							},
+							"collapsed": false
+						},
+						"source": [
+							"display(df)"
+						],
+						"outputs": [],
+						"execution_count": 31
 					},
 					{
 						"cell_type": "code",

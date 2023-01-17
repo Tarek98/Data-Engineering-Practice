@@ -6,7 +6,7 @@
 			"value": "tasynapse1"
 		},
 		"tasynapse1-WorkspaceDefaultSqlServer_connectionString": {
-			"value": ""
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:tasynapse1.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"tasynapse1-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://tasynapsestorage.dfs.core.windows.net"
