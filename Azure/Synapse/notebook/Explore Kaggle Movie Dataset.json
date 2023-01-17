@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "3",
 				"spark.dynamicAllocation.maxExecutors": "3",
-				"spark.autotune.trackingId": "94954716-6875-47bc-b21a-04fbcc88b828"
+				"spark.autotune.trackingId": "e2bf6bb8-e64d-4ac5-bab7-5eec416ce40e"
 			}
 		},
 		"metadata": {
@@ -48,6 +48,24 @@
 			"sessionKeepAliveTimeout": 30
 		},
 		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"spark.version"
+				],
+				"execution_count": 36
+			},
 			{
 				"cell_type": "code",
 				"metadata": {
@@ -196,16 +214,39 @@
 					"collapsed": false
 				},
 				"source": [
-					"val subset = movieDF.where($\"movie\".contains(\"Lost:\"))\n",
+					"val testMoviesList = movieDF.where($\"movie\".contains(\"Lost:\"))\n",
 					"    .groupBy($\"movie\").count()\n",
 					"    .where($\"count\" === 5)\n",
 					"    .orderBy($\"movie\")\n",
-					"    .limit(2)\n",
+					"    .limit(4)\n",
 					"    .select($\"movie\")\n",
 					"    .map(row => row.getString(0))\n",
-					"    .collect()"
+					"    .collect()\n",
+					"\n",
+					"testMoviesList.map('\"' + _ +'\"')"
 				],
-				"execution_count": 8
+				"execution_count": 79
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"// Task 1 Description:\n",
+					"//   - Get reviewer names with the highest rating for each movie.\n",
+					"//   - Test on a small subset of the data (5-10 movies).\n",
+					"//   - Expand to full dataset."
+				],
+				"execution_count": 65
 			},
 			{
 				"cell_type": "code",
@@ -222,14 +263,24 @@
 					"collapsed": false
 				},
 				"source": [
-					"val taskOneDF = movieDF.where($\"movie\".isin(subset:_*))\n",
-					"    .withColumn(\"ratingNum\", col(\"rating\").cast(IntegerType))\n",
-					"    .groupBy($\"movie\")\n",
-					"    .max(\"ratingNum\")\n",
+					"// Task 1 Test:\n",
 					"\n",
-					"display(taskOneDF)"
+					"val testMoviesDf = movieDF.where($\"movie\".isin(testMoviesList:_*)).withColumn(\"rating\",$\"rating\".cast(IntegerType))\n",
+					"\n",
+					"val allRatings = testMoviesDf\n",
+					"    .select(\"movie\", \"reviewer\", \"rating\")\n",
+					"\n",
+					"val maxRatings = testMoviesDf\n",
+					"    .groupBy(col(\"movie\"))\n",
+					"    .agg(max(col(\"rating\")).as(\"rating\"))\n",
+					"\n",
+					"val t1ResultDf = allRatings.join(maxRatings, Seq(\"movie\", \"rating\"), \"inner\")\n",
+					"    .groupBy(col(\"movie\"),col(\"rating\").as(\"maxRating\"))\n",
+					"    .agg(collect_list(col(\"reviewer\")).as(\"maxRatingReviewers\"))\n",
+					"\n",
+					"display(t1ResultDf)"
 				],
-				"execution_count": 9
+				"execution_count": 80
 			},
 			{
 				"cell_type": "code",
@@ -242,14 +293,13 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
-					"//   - Get reviewer names with the highest rating for each movie.\n",
-					"//   - Test on a small subset of the data (5-10 movies).\n",
-					"//   - Expand to full dataset."
+					"display(testMoviesDf.sort($\"movie\".asc, $\"rating\".desc))"
 				],
-				"execution_count": null
+				"execution_count": 81
 			},
 			{
 				"cell_type": "code",
@@ -262,17 +312,29 @@
 						"transient": {
 							"deleting": false
 						}
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
-					"val taskOneDF = movieDF.where($\"movie\".isin(subset:_*))\n",
-					"    .withColumn(\"ratingNum\", col(\"rating\").cast(IntegerType))\n",
-					"    .groupBy($\"movie\")\n",
-					"    .\n",
+					"// Task 1 Prod:\n",
 					"\n",
-					"display(taskOneDF)"
+					"val prodMoviesDf = movieDF.withColumn(\"rating\",$\"rating\".cast(IntegerType))\n",
+					"\n",
+					"val allRatings = prodMoviesDf\n",
+					"    .select(\"movie\", \"reviewer\", \"rating\")\n",
+					"\n",
+					"val maxRatings = prodMoviesDf\n",
+					"    .groupBy(col(\"movie\"))\n",
+					"    .agg(max(col(\"rating\")).as(\"rating\"))\n",
+					"\n",
+					"val t1ResultDf = allRatings.join(maxRatings, Seq(\"movie\", \"rating\"), \"inner\")\n",
+					"    .groupBy(col(\"movie\"),col(\"rating\").as(\"maxRating\"))\n",
+					"    .agg(collect_list(col(\"reviewer\")).as(\"maxRatingReviewers\"))\n",
+					"    .withColumn(\"countOfMaxRatingReviewers\", size($\"maxRatingReviewers\"))\n",
+					"\n",
+					"display(t1ResultDf.sort($\"countOfMaxRatingReviewers\".desc).limit(100))"
 				],
-				"execution_count": 12
+				"execution_count": 92
 			},
 			{
 				"cell_type": "code",
@@ -295,7 +357,7 @@
 					"//     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))\n",
 					"//     .map(t => t._1 + \",\" + t._2.mkString(\",\"))"
 				],
-				"execution_count": 10
+				"execution_count": 74
 			}
 		]
 	}
