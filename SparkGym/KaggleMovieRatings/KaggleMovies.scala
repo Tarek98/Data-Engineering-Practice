@@ -24,14 +24,17 @@ object KaggleMovies {
             .groupBy(col("movie"))
             .agg(max(col("rating")).as("rating"))
 
-        val res = allRatings.join(maxRatings, Seq("movie", "rating"), "inner")
-            .groupBy(col("movie"))
+        val t1Result = allRatings.join(maxRatings, Seq("movie", "rating"), "inner")
+            .groupBy(col("movie"),col("rating").as("maxRating"))
             .agg(collect_list(col("reviewer")).as("maxRatingReviewers"))
+            .withColumn("countOfMaxRatingReviewers", size(col("maxRatingReviewers")))
         // END: Task 1
-
 
         // Debug breakpoint
         val y = 2
+        // t1Result.sort(col("movie").asc).limit(100).show(false)
+        // allRatings.sort(col("movie").asc, col("rating").desc).limit(100).show(false)
+
     }
 }
 
