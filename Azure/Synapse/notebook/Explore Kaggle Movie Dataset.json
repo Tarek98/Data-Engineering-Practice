@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "3",
 				"spark.dynamicAllocation.maxExecutors": "3",
-				"spark.autotune.trackingId": "e2bf6bb8-e64d-4ac5-bab7-5eec416ce40e"
+				"spark.autotune.trackingId": "b74a4064-8b36-442e-a6d0-5b4e685829b7"
 			}
 		},
 		"metadata": {
@@ -64,7 +64,7 @@
 				"source": [
 					"spark.version"
 				],
-				"execution_count": 36
+				"execution_count": 93
 			},
 			{
 				"cell_type": "code",
@@ -83,7 +83,7 @@
 					"import org.apache.spark.sql.functions._\n",
 					"import org.apache.spark.sql.types._"
 				],
-				"execution_count": 1
+				"execution_count": 94
 			},
 			{
 				"cell_type": "code",
@@ -103,7 +103,7 @@
 					"// From docs: JSON Lines (newline-delimited JSON) is supported by default. For JSON (one record per file), set the multiLine option to true.\n",
 					"var movieDF = spark.read.format(\"json\").option(\"multiLine\",\"true\").load(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/kaggleMovieReviews/\")"
 				],
-				"execution_count": 2
+				"execution_count": 95
 			},
 			{
 				"cell_type": "code",
@@ -122,7 +122,7 @@
 					"movieDF = movieDF.repartition(sc.defaultParallelism)\n",
 					"movieDF.persist()"
 				],
-				"execution_count": 3
+				"execution_count": 96
 			},
 			{
 				"cell_type": "code",
@@ -140,7 +140,7 @@
 				"source": [
 					"movieDF.printSchema"
 				],
-				"execution_count": 4
+				"execution_count": 97
 			},
 			{
 				"cell_type": "code",
@@ -159,7 +159,7 @@
 					"movieDF.count()\n",
 					"// Dataset contains around 5.6 million reviews as shown in kaggle homepage "
 				],
-				"execution_count": 5
+				"execution_count": 98
 			},
 			{
 				"cell_type": "code",
@@ -178,7 +178,7 @@
 					"movieDF.where($\"spoiler_tag\" === 1).count()\n",
 					"// Dataset contains around 1.2 million spoiler reviews as shown in kaggle homepage "
 				],
-				"execution_count": 6
+				"execution_count": 99
 			},
 			{
 				"cell_type": "code",
@@ -197,7 +197,7 @@
 				"source": [
 					"display(movieDF.take(10))"
 				],
-				"execution_count": 7
+				"execution_count": 100
 			},
 			{
 				"cell_type": "code",
@@ -225,7 +225,7 @@
 					"\n",
 					"testMoviesList.map('\"' + _ +'\"')"
 				],
-				"execution_count": 79
+				"execution_count": 101
 			},
 			{
 				"cell_type": "code",
@@ -246,7 +246,7 @@
 					"//   - Test on a small subset of the data (5-10 movies).\n",
 					"//   - Expand to full dataset."
 				],
-				"execution_count": 65
+				"execution_count": 102
 			},
 			{
 				"cell_type": "code",
@@ -280,7 +280,7 @@
 					"\n",
 					"display(t1ResultDf)"
 				],
-				"execution_count": 80
+				"execution_count": 103
 			},
 			{
 				"cell_type": "code",
@@ -299,7 +299,7 @@
 				"source": [
 					"display(testMoviesDf.sort($\"movie\".asc, $\"rating\".desc))"
 				],
-				"execution_count": 81
+				"execution_count": 104
 			},
 			{
 				"cell_type": "code",
@@ -334,7 +334,7 @@
 					"\n",
 					"display(t1ResultDf.sort($\"countOfMaxRatingReviewers\".desc).limit(100))"
 				],
-				"execution_count": 92
+				"execution_count": 105
 			},
 			{
 				"cell_type": "code",
@@ -350,14 +350,29 @@
 					}
 				},
 				"source": [
-					"// val taskOneDF = textFile.map(line => line.split(\",\"))\n",
-					"//     .map(line => line.map(x => if (x == \"\") \"0\" else x))\n",
-					"//     .map(line => (line(0), line.drop(1)))\n",
-					"//     .map(t => (t._1, t._2.zipWithIndex, t._2.max))\n",
-					"//     .map(t => (t._1, t._2.filter(rating => rating._1 == t._3).map(rating => rating._2.toInt + 1)))\n",
-					"//     .map(t => t._1 + \",\" + t._2.mkString(\",\"))"
+					"// Save Task 1 Output\n",
+					"\n",
+					"t1ResultDf.write.mode(\"overwrite\").json(\"abfss://tasynapsestoragefs@tasynapsestorage.dfs.core.windows.net/task1Result/\")"
 				],
-				"execution_count": 74
+				"execution_count": 108
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					""
+				],
+				"execution_count": null
 			}
 		]
 	}
