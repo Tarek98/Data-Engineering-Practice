@@ -130,6 +130,10 @@
 
 --- Next In Line ---
 
+- Start review of learning rust.
+
+- Better planning for weekly learning schedule : 2h Monday & 2h Thursday + Minimize after work activities on those days?
+
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
   - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
   - https://www.opensourceforu.com/2012/06/beginners-guide-gnu-grep-basics/
