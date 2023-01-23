@@ -1,0 +1,40 @@
+✅ [Done] ❌ [Undone] 🚧 [Focus-Point]
+
+- Intro to Rust:
+
+    - Traditional performant langs like C & C++:
+        - Come without some niceties in other popular languages like Java: static type checking & garbage collection.
+        - Hard or impossible to reliably write code that is: fast, correct, and accurate.
+
+    - Core Ideas: 
+        - Enforce developer mistakes to be very difficult to make.
+            - Why? Expecting devs not to make mistakes is unrealistic. 
+            - What kind of mistakes? Memory allocation & concurrency issues.
+            - How? Checking things at compile time that most languages don't check at all, and if so, only at runtime.
+
+        - Incorporates many good ideas from C++ & improves upon them sometimes:
+            - ✅❌ e.g. RAII: Resource Acquisition Is Initialization: 
+                - A resource is encapsulated into a class: constructor usually acquires the resource & destructor always releases it.
+                - ^It is used via a local instance of the class.
+                - ^^ It is automatically freed when the object goes out of scope.
+                - Guarantees that whatever happens while the resource is in use, it will eventually get freed.
+            - e.g. Pointers/References.
+
+        - Ownership: 
+            - Rust's default memory management strategy.
+            - At compile time, it is determined when allocated memory can be cleaned up.
+            - Memory can be cleaned up when no one needs it anymore.
+            - You can't mess up & leave a dangling reference around.
+            - How it works:
+                1. Every value has a variable that is its owner.
+                2. There can only be one owner at a time.
+                3. When the owner goes out of scope, the value is dropped.
+        
+        - ✅❌ Transfer of Ownership:
+            - Copy Semantics:
+
+            - Move Semantics:
+
+            - Borrowing:
+    
+* Stopped at Lecture 2 Page 7 "Do the Rules Work?".

@@ -1,0 +1,57 @@
+- One important parameter for parallel collections is the number of partitions to cut the dataset into. 
+Spark will run one task for each partition of the cluster. 
+Typically you want 2-4 partitions for each CPU in your cluster.
+
+- All transformations in Spark are lazy, in that they do not compute their results right away. 
+Instead, they just remember the transformations applied to some base dataset (e.g. a file). 
+The transformations are only computed when an action requires a result to be returned to the driver program.
+
+- ^This design enables Spark to run more efficiently. 
+For example, we can realize that a dataset created through map will be used in a reduce and return only 
+the result of the reduce to the driver, rather than the larger mapped dataset.
+
+- By default, each transformed RDD may be recomputed each time you run an action on it. 
+However, you may also persist an RDD in memory using the persist (or cache) method,
+which would cause the RDD to be saved in memory after the first time it is computed (through a spark action)
+i.e. all partitions of the RDD are saved on their respective nodes (snapshot of dataset up to the latest transformation).
+
+- val lines = sc.textFile("data.txt")
+The line above defines a base RDD from an external file. This dataset is not loaded in memory or otherwise acted on: lines is merely a pointer to the file. 
+
+- One of the harder things about Spark is understanding the scope and life cycle of variables and methods when executing code across a cluster. 
+RDD operations that modify variables outside of their scope can be a frequent source of confusion:
+
+    // Consider the naive RDD element sum below, which may behave differently depending on whether execution is happening within the same JVM.
+
+    var counter = 0
+    var rdd = sc.parallelize(data)
+
+    // Wrong: Don't do this!!
+    rdd.foreach(x => counter += x)
+
+    println("Counter value: " + counter)
+
+    // The variables within the closure sent to each executor are copied and thus, when counter is referenced within the foreach function, it’s no longer the counter on the driver node. 
+
+    // To ensure well-defined behavior in these sorts of scenarios one should use an Accumulator. 
+    // Accumulators in Spark are used specifically to provide a mechanism for safely updating a variable when execution is split up across worker nodes in a cluster.
+
+    // In general, closures - constructs like loops or locally defined methods, should not be used to mutate some global state. 
+    // Spark does not define or guarantee the behavior of mutations to objects referenced from outside of closures.  
+
+- Another common idiom is attempting to print out the elements of an RDD using rdd.foreach(println) or rdd.map(println). 
+On a single machine, this will generate the expected output and print all the RDD’s elements. 
+However, in cluster mode, the output to stdout being called by the executors is now writing to the executor’s stdout instead.
+
+- To print all elements on the driver, one can use the collect() method to first bring the RDD to the driver node thus: rdd.collect().foreach(println).
+    - This can cause the driver to run out of memory, though, because collect() fetches the entire RDD to a single machine.
+    - Thus, you can use take() to print fewer elements or write+read the RDD to storage.
+
+-  The shuffle is Spark’s mechanism for re-distributing data so that it’s grouped differently across partitions.
+This typically involves copying data across executors and machines, making the shuffle a complex and costly operation.
+
+- Operations which can cause a shuffle include repartition operations like repartition and coalesce, 
+‘ByKey operations (except for counting) like groupByKey and reduceByKey, and join operations like cogroup and join.
+
+- The Shuffle is an expensive operation since it involves disk I/O, data serialization, and network I/O.
+When data does not fit in memory Spark will spill these tables to disk, incurring the additional overhead of disk I/O and increased garbage collection.

@@ -1,0 +1,38 @@
+Quick diff between WUS2-UserBI Test Synapse Run (-) VS. WUS2-UserBI Prod Databricks Run (+)
+
+(+) spark.akka.frameSize	256
+
+(+) spark.cleaner.referenceTracking.blocking	false
+
+(-) spark.sql.legacy.replaceDatabricksSparkAvro.enabled	false
+
+(-) spark.databricks.delta.vacuum.parallelDelete.enabled	true
+
+(+) spark.driver.allowMultipleContexts	false
+
+(-) spark.driver.maxResultSize	12g 
+(+) spark.driver.maxResultSize	6g
+
+(-) spark.eventLog.enabled	true 
+(+) spark.eventLog.enabled	false
+
+(-) spark.executor.extraJavaOptions	-Dhdp.version={{hdp_full_version}} -Detwlogger.component=sparkexecutor -DlogFilter.filename=SparkLogFilters.xml -DpatternGroup.filename=SparkPatternGroups.xml -Dlog4jspark.root.logger=INFO,console,RFA,Anonymizer -Dlog4jspark.log.dir=/var/log/sparkapp/${user.name} -Dlog4jspark.log.file=sparkexecutor.log -Dlog4j.configuration=file:/usr/hdp/current/spark3-client/conf/log4j.properties -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -XX:+UseParallelGC -XX:+UseParallelOldGC -Xss8m
+(+) spark.executor.extraJavaOptions	-Djava.io.tmpdir=/local_disk0/tmp -XX:ReservedCodeCacheSize=256m -XX:+UseCodeCacheFlushing -XX:-UseContainerSupport -XX:+PrintFlagsFinal -XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xss4m -Djavax.xml.datatype.DatatypeFactory=com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Dorg.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser -Dorg.w3c.dom.DOMImplementationSourceList=com.sun.org.apache.xerces.internal.dom.DOMXSImplementationSourceImpl -Djavax.net.ssl.sessionCacheSize=10000 -Dscala.reflect.runtime.disable.typetag.cache=true -Ddatabricks.serviceName=spark-executor-1
+
+(-) spark.executor.memory	112g
+    spark.executor.memoryOverhead	384
+(+) spark.executor.memory	40659m --> @Tarek : 40g
+
+(+) spark.files.fetchFailure.unRegisterOutputOnHost	true
+    spark.files.overwrite	true
+    spark.files.useFetchCache	false
+
+(...) Several spark.hadoop.* options are different
+
+(-) spark.scheduler.mode	FIFO
+(+) spark.scheduler.mode	FAIR
+    spark.scheduler.listenerbus.eventqueue.size	20000
+    
+
+(-) spark.driver.extraJavaOptions	-Dhdp.version={{hdp_full_version}} -Detwlogger.component=sparkdriver -DlogFilter.filename=SparkLogFilters.xml -DpatternGroup.filename=SparkPatternGroups.xml -Dlog4jspark.root.logger=INFO,console,RFA,Anonymizer -Dlog4jspark.log.dir=/var/log/sparkapp/${user.name} -Dlog4jspark.log.file=sparkdriver.log -Dlog4j.configuration=file:/usr/hdp/current/spark3-client/conf/log4j.properties -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl -XX:+UseParallelGC -XX:+UseParallelOldGC -Xss8m
+(+) ? NOT FOUND

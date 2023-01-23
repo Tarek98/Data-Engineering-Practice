@@ -1,0 +1,22 @@
+
+
+--- Spark SQL ---
+From https://spark.apache.org/docs/2.3.0/sql-programming-guide.html (Overview & Getting Started sections are sufficient for now)
+
+- Unlike the basic Spark RDD API, the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. 
+  - Internally, Spark SQL uses this extra information to perform extra optimizations.
+
+- There are several ways to interact with Spark SQL:
+including SQL and the Dataset API.
+
+- A Dataset is a distributed collection of data. 
+  - Dataset provides the benefits of RDDs (strong typing, ability to use powerful lambda functions) with the benefits of Spark SQL’s optimized execution engine.
+
+- A DataFrame is a Dataset organized into named columns. 
+  - It is conceptually equivalent to a table in a relational database, but with richer optimizations under the hood.
+  - In Scala and Java, a DataFrame is represented by a Dataset of Rows.
+
+--- Spark Cluster Mode ---
+From https://spark.apache.org/docs/3.0.0/cluster-overview.html
+
+- See images in current folder.
