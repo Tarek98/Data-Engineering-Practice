@@ -1,6 +1,6 @@
 ✅ [Done] ❌ [Undone] 🚧 [Focus-Point] ⌛[ETA]
 
-- DONE:
+- ✅ DONE:
   - 5h ⌛ 2̶h̶ 4h : ✅ Get WordCount scala sample to work locally & understand how it works E2E.
       - Needs to work locally, instead of hadoop cluster it was originally designed to run on.
       - Got it working with Scala Metals + SBT at word-count-test folder :-)
@@ -107,33 +107,39 @@
     * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
     - ✅ Experiment with big data file sizes (datasets from Kaggle) for MovieRatings spark app running on databricks cluster.
 
---- December 11+12 ---
-- 3h+2h ⌛ 2h+2h : ✅[WIP] Test run Kaggle MovieRatings Task 1 with synapse cluster.
-  * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
-  * Task 1: Get reviewer names with the highest rating for each movie.
-    - Test on a small subset of the data (5-10 movies).
-    - Expand to full dataset.
-  - ✅ Work on code implementation with DFs instead of RDDs in local instance. 
+  --- December 11+12 ---
+  - 3h+2h ⌛ 2h+2h : ✅[WIP] Test run Kaggle MovieRatings Task 1 with synapse cluster.
+    * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
+    * Task 1: Get reviewer names with the highest rating for each movie.
+      - Test on a small subset of the data (5-10 movies).
+      - Expand to full dataset.
+    - ✅ Work on code implementation with DFs instead of RDDs in local instance. 
 
---- January 17 ---
-- 1h30m ⌛ 2h : ✅[Done] Test run Kaggle MovieRatings Task 1 with synapse cluster.
-  * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
-  * Task 1: Get reviewer names with the highest rating for each movie.
-  - ✅ Test on a small subset of the data (5-10 movies).
-  - ✅ Expand to full dataset.
-  - ✅ Finish code implementation with DFs instead of RDDs in local instance. 
-  - ✅ Upgrade spark version to 3.3.1 with Scala 2.12.15 for synapse cluster.
-    - Note: This is what's used on local instance for full VS Code debugging support.
-  - ✅ Finish test runs on Synapse notebook. 
+  --- January 17 ---
+  - 1h30m ⌛ 2h : ✅[Done] Test run Kaggle MovieRatings Task 1 with synapse cluster.
+    * On waterloo edu account that has monthly free $200 CAD azure credits (MSFT employee benefit).
+    * Task 1: Get reviewer names with the highest rating for each movie.
+    - ✅ Test on a small subset of the data (5-10 movies).
+    - ✅ Expand to full dataset.
+    - ✅ Finish code implementation with DFs instead of RDDs in local instance. 
+    - ✅ Upgrade spark version to 3.3.1 with Scala 2.12.15 for synapse cluster.
+      - Note: This is what's used on local instance for full VS Code debugging support.
+    - ✅ Finish test runs on Synapse notebook. 
 
-** ALWAYS TAKE NOTES WHILE READING/WATCHING THEORY **
+--- January 23 ---
+- 0 ⌛ 2h : ECE 459 review of learning rust.
+  - Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
+  - Skim w/ notes: Rust basics from lectures.
+  - Write some basic code from online docs.
+  - Run assignments locally: step-through code.
+
+🚧 Weekly learning schedule : 2h Monday XOR Tuesday + 2h on Company Learning Day (Last Friday of Every Month)
+
+🚧 Always take notes while reading or watching theory
 
 --- Next In Line ---
-
-- Start review of learning rust.
-
-- Better planning for weekly learning schedule : 2h Monday & 2h Thursday + Minimize after work activities on those days?
-
+- 0 ⌛ 2h : Watch Rafael's recordings of rust learnings.
 - 0 ⌛ 30m : Relearn grep & regex matching basics.
   - [15m/30m] Example practice: Use these to find & delete all gitignored files in practice repo. 
   - https://www.opensourceforu.com/2012/06/beginners-guide-gnu-grep-basics/
+  - Can try using ChatGPT to help you ;-)
