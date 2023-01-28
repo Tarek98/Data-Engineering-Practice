@@ -131,10 +131,9 @@
     - ✅[WIP] Skim w/ notes: Rust basics from lectures.
 
 --- January 27 ---
-- 0 ⌛ 1h30m : ECE 459 review of learning rust.
-  - Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
+- 1h45m ⌛ 1h30m : ECE 459 review of learning rust.
+  - ✅ Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
   - ✅❌ Skim w/ notes: Rust basics from lectures.
-  - Write some basic code from online docs.
   - Run assignments locally: step-through code.
 
 
