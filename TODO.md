@@ -126,14 +126,19 @@
       - Note: This is what's used on local instance for full VS Code debugging support.
     - ✅ Finish test runs on Synapse notebook. 
 
---- January 23 ---
-- 0 ⌛ 2h : ECE 459 review of learning rust.
+  --- January 23 ---
+  - 2h ⌛ 2h : ECE 459 review of learning rust.
+    - ✅[WIP] Skim w/ notes: Rust basics from lectures.
+
+--- January 27 ---
+- 0 ⌛ 1h30m : ECE 459 review of learning rust.
   - Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
-  - Skim w/ notes: Rust basics from lectures.
+  - ✅❌ Skim w/ notes: Rust basics from lectures.
   - Write some basic code from online docs.
   - Run assignments locally: step-through code.
 
-🚧 Weekly learning schedule : 2h Monday XOR Tuesday + 2h on Company Learning Day (Last Friday of Every Month)
+
+🚧 Weekly learning schedule : 2h Monday ^ Tuesday + 2h on Company Learning Day (Last Friday of Every Month)
 
 🚧 Always take notes while reading or watching theory
 

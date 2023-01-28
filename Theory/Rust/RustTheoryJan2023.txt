@@ -29,12 +29,6 @@
                 1. Every value has a variable that is its owner.
                 2. There can only be one owner at a time.
                 3. When the owner goes out of scope, the value is dropped.
-        
-        - ✅❌ Transfer of Ownership:
-            - Copy Semantics:
-
-            - Move Semantics:
-
-            - Borrowing:
     
-* Stopped at Lecture 2 Page 7 "Do the Rules Work?".
+* Stopped at Lecture 3 Page 2 "Do the Rules Work?".
+* Set goals for amount of learning to finish per day.
