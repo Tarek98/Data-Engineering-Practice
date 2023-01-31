@@ -1,34 +1,38 @@
 ✅ [Done] ❌ [Undone] 🚧 [Focus-Point]
 
-- Intro to Rust:
+- Traditional performant langs like C & C++:
+    - Come without some niceties in other popular languages like Java: static type checking & garbage collection.
+    - Hard or impossible to reliably write code that is: fast, correct, and accurate.
 
-    - Traditional performant langs like C & C++:
-        - Come without some niceties in other popular languages like Java: static type checking & garbage collection.
-        - Hard or impossible to reliably write code that is: fast, correct, and accurate.
+- Core Ideas: 
+    - Enforce developer mistakes to be very difficult to make.
+        - Why? Expecting devs not to make mistakes is unrealistic. 
+        - What kind of mistakes? Memory allocation & concurrency issues.
+        - How? Checking things at compile time that most languages don't check at all, and if so, only at runtime.
 
-    - Core Ideas: 
-        - Enforce developer mistakes to be very difficult to make.
-            - Why? Expecting devs not to make mistakes is unrealistic. 
-            - What kind of mistakes? Memory allocation & concurrency issues.
-            - How? Checking things at compile time that most languages don't check at all, and if so, only at runtime.
+    - Incorporates many good ideas from C++ & improves upon them sometimes:
+        - e.g. RAII: Resource Acquisition Is Initialization: 
+            - A resource is encapsulated into a class: constructor usually acquires the resource & destructor always releases it.
+            - ^It is used via a local instance of the class.
+            - ^^ It is automatically freed when the object goes out of scope.
+            - Guarantees that whatever happens while the resource is in use, it will eventually get freed.
+        - e.g. Pointers/References.
 
-        - Incorporates many good ideas from C++ & improves upon them sometimes:
-            - ✅❌ e.g. RAII: Resource Acquisition Is Initialization: 
-                - A resource is encapsulated into a class: constructor usually acquires the resource & destructor always releases it.
-                - ^It is used via a local instance of the class.
-                - ^^ It is automatically freed when the object goes out of scope.
-                - Guarantees that whatever happens while the resource is in use, it will eventually get freed.
-            - e.g. Pointers/References.
+    - Ownership: 
+        - Rust's default memory management strategy.
+        - At compile time, it is determined when allocated memory can be cleaned up.
+        - Memory can be cleaned up when no one needs it anymore.
+        - You can't mess up & leave a dangling reference around.
+        - How it works:
+            1. Every value has a variable that is its owner.
+            2. There can only be one owner at a time.
+            3. When the owner goes out of scope, the value is dropped.
 
-        - Ownership: 
-            - Rust's default memory management strategy.
-            - At compile time, it is determined when allocated memory can be cleaned up.
-            - Memory can be cleaned up when no one needs it anymore.
-            - You can't mess up & leave a dangling reference around.
-            - How it works:
-                1. Every value has a variable that is its owner.
-                2. There can only be one owner at a time.
-                3. When the owner goes out of scope, the value is dropped.
-    
-* Stopped at Lecture 3 Page 2 "Do the Rules Work?".
-* Set goals for amount of learning to finish per day.
+- Traits: 
+    - A lot like interfaces in OOP.
+    - You can use + to combine multiple traits.
+    - 3 Important Traits To Start:
+        - Iterator: allows us to iterate over a collection & more efficient than for loop construction.
+        - Send: necessary for a variable to be transferred between threads & some standard types choose not to implement send trait to hint that we shouldn't use it for thread transfer.
+        - Sync: can be referenced from multiple threads BUT doesn't mean all operations on the type are safe.
+        

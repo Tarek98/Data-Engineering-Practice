@@ -130,15 +130,19 @@
   - 2h ⌛ 2h : ECE 459 review of learning rust.
     - ✅[WIP] Skim w/ notes: Rust basics from lectures.
 
---- January 27 ---
-- 1h45m ⌛ 1h30m : ECE 459 review of learning rust.
-  - ✅ Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
+  --- January 27 ---
+  - 1h45m ⌛ 1h30m : ECE 459 review of learning rust.
+    - ✅ Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
+    - ✅[WIP] Skim w/ notes: Rust basics from lectures.
+
+--- January 31 ---
+- 0 ⌛ 1h45m : ECE 459 review of learning rust.
   - ✅❌ Skim w/ notes: Rust basics from lectures.
+    - Stopped at Lecture 3 Page 7: Back to the Mutex.
   - Run assignments locally: step-through code.
 
-
 🚧 Weekly learning schedule : 2h Monday ^ Tuesday + 2h on Company Learning Day (Last Friday of Every Month)
-
+🚧 Set objective goals for learning items to finish per day
 🚧 Always take notes while reading or watching theory
 
 --- Next In Line ---
