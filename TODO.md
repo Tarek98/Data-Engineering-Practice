@@ -135,11 +135,18 @@
     - ✅ Setup local rust dev environment --> write code in lectures in repo w/ comments on how it works.
     - ✅[WIP] Skim w/ notes: Rust basics from lectures.
 
---- January 31 ---
-- 0 ⌛ 1h45m : ECE 459 review of learning rust.
-  - ✅❌ Skim w/ notes: Rust basics from lectures.
-    - Stopped at Lecture 3 Page 7: Back to the Mutex.
-  - Run assignments locally: step-through code.
+  --- January 31 ---
+  - 1h45m ⌛ 1h45m : ✅[WIP] ECE 459 review of learning rust.
+    - ✅[WIP] Skim w/ notes: Rust basics from lectures.
+      - Stopped at Lecture 3 Page 7: Back to the Mutex.
+
+--- February 06 ---
+- 2h ⌛ 2h : ✅[WIP] ECE 459 review of learning rust.
+  * ✅ Feb 6: Primary Goal: finish review up to L4 end.
+  * ❌ Feb 6: Secondary Goal: review notes & code so far.
+  - ✅[WIP] Skim w/ notes w/ hands-on code: Rust basics from lectures.
+    - Remaining lecture is L5 Async IO.
+  - ❌ Run assignments locally: step-through code.
 
 🚧 Weekly learning schedule : 2h Monday ^ Tuesday + 2h on Company Learning Day (Last Friday of Every Month)
 🚧 Set objective goals for learning items to finish per day

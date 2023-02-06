@@ -5,37 +5,83 @@ use std::io;
 use std::thread;
 use std::time::Duration;
 use std::vec;
-use std::sync::mpsc;
+use std::sync::{Arc, mpsc, Mutex};
 
 fn main() {
+    if false {
+        println!("\n");
+        println!("Hello World!");
+        println!("\n");
+        print_number();
+        println!("\n");
+        shadowing();
+        println!("\n");
+        ownership_transfer();
+        println!("\n");
+        string_slice();
+        println!("\n");
+        spawn_hello_threads();
+        println!("\n");
+        thread_data_transfer();
+    }
     println!("\n");
-    println!("Hello World!");
-    println!("\n");
-    print_number();
-    println!("\n");
-    shadowing();
-    println!("\n");
-    ownership_transfer();
-    println!("\n");
-    string_slice();
-    println!("\n");
-    spawn_hello_threads();
-    println!("\n");
-    thread_data_transfer();
+    lifetimes();
+}
+
+fn lifetimes() {
+    // Rust compiler is usually able to determine how long variables will live.
+    let s1 = String::from("abcd");
+    let s2 = "xy";
+    /* 
+    // In this case it cannot:
+    let result = longest_broken(s1.as_str(), s2);
+    */
+    let result = longest(s1.as_str(), s2);
+    // So sometimes we have to help the compiler by specifying lifetimes using annotations.
+    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+        // Lifetime annotations are written with apostrophe usually followed by a short name;
+        // The 1st appearance says all params & return vals must have the same lifetime, then we say we accept strings that live at least as long as the 'a lifetime i.e. at least as long as the smallest of x & y.
+        if x.len() > y.len() {
+            x
+        } else {
+            y
+        }
+        // We're not breaking any rules here;
+        // But we would be if we specify a lifetime as 'static i.e. the variable could live entire duration of program but it doesn't necessarily have to.
+        // 'static can be used correctly to tell the compiler that a particular reference will always be valid.
+        // IMPORTANT: you could use 'static to bandaid compiler errors even if suggested by compiler but you shouldn't. You should instead apply the correct
+        //            lifetime annotations or fix the would-be dangling reference. The compiler could be complaining rightfully so because a reference isn't
+        //            appropriate & you need to move, copy, or use something like Arc for the data instead.
+        // WHY: Memory that's kept around forever that is no longer useful is like a memory leak.
+    }
+    println!("Longest string is '{}'", result);
+ /*    
+    fn longest_broken(x: &str, y: &str) -> &str {
+        // Compile error saying it can't figure out if the return value is the borrowing of x or y; It's not sure how long those string live.
+        if x.len() > y.len() {
+            x
+        } else {
+            y
+        }
+    }
+ */
 }
 
 fn thread_data_transfer() {
-    // (1) Capturing: reference variables declared outside the current closure & thread context.
-    //                compiler will try figure out how to make it work e.g. by borrowing or moving?
-    //                or you can specify yourself how we can make it work e.g. move as follows:
+    // (1) Capturing: 
+    // Reference variables declared outside the current closure & thread context.
+    // Compiler will try figure out how to make it work e.g. by borrowing or moving?
+    // Or you can specify yourself how we can make it work e.g. move as follows:
     let v = vec![1,2,3];
     let handle = thread::spawn(move || {
         println!("vector v = {:?}", v);
     });
     handle.join().unwrap();
+    println!("\n");
     
-    // (2) Message Passing: safer than shared memory as it's harder to race or access inappropriate locations.
-    //                      if we want to have multiple senders use clone on tx.
+    // (2) Message Passing: 
+    // Safer than shared memory as it's harder to race or access inappropriate locations.
+    // If we want to have multiple senders use clone on tx.
     let (tx, rx) = mpsc::channel();
     thread::spawn(move || {
         let msg = String::from("hi");
@@ -43,9 +89,42 @@ fn thread_data_transfer() {
     });
     let received = rx.recv().unwrap();
     println!("Got: {}", received);
+    println!("\n");
 
-    // (3) Shared State 
-    // ...?
+    // (3) Shared State : Mutual Exclusion: 
+    // We want more than one thread to be able to modify a value concurrently.
+    // Thread has to have the mutex to access the data.
+    let m = Mutex::new(5);
+    {
+        // Mutex lock is acquired in current manual scope (braces open)
+        let mut num = m.lock().unwrap();
+        *num = 6;
+        // Mutex lock is released after scope exits (braces close)
+    }
+    println!("m = {:?}", m);
+    println!("\n");
+
+    // (3) Shared State : Arc Mutex:
+    // Use of mutex above is unnecessary since there's only 1 thread.
+    // The intended use is to "move" it into multiple threads but that violates our rule about having only 1 owner.
+    // So we have to break a rule! We need the ability to share ownership of some memory; This is done using the type Arc<T>.
+    let quit = Arc::new(Mutex::new(false));
+    let handler_quit = Arc::clone(&quit);
+    ctrlc::set_handler(move || {
+        // Dedicated signal handling thread where we execute the handler each time we receive a Ctrl+C signal.
+        let mut b = handler_quit.lock().unwrap();
+        *b = true;
+        thread::sleep(Duration::from_millis(3000));
+    }).expect("Error setting up the Ctrl-C handler");
+    let mut x = 0;
+    while !(*quit.lock().unwrap()) {
+        println!("Hello #{}, I'll stop this in 3 seconds if you hit Ctrl-C.", x);
+        x += 1;
+        thread::sleep(Duration::from_millis(1000));
+    }
+    println!("Good Bytes!");
+    // There still exists possibility of deadlock in rust with mutexes. Nothing prevents thread 1 from acquiring mutex A then B,
+    // and thread 2 from concurrently acquiring B then A.
 }
 
 fn spawn_hello_threads() {
