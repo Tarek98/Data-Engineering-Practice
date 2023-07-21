@@ -2,10 +2,10 @@
 // To run: ./starter
 
 use std::io;
+use std::sync::{mpsc, Arc, Mutex};
 use std::thread;
 use std::time::Duration;
 use std::vec;
-use std::sync::{Arc, mpsc, Mutex};
 
 fn main() {
     if false {
@@ -32,7 +32,7 @@ fn lifetimes() {
     // Rust compiler is usually able to determine how long variables will live.
     let s1 = String::from("abcd");
     let s2 = "xy";
-    /* 
+    /*
     // In this case it cannot:
     let result = longest_broken(s1.as_str(), s2);
     */
@@ -55,31 +55,32 @@ fn lifetimes() {
         // WHY: Memory that's kept around forever that is no longer useful is like a memory leak.
     }
     println!("Longest string is '{}'", result);
- /*    
-    fn longest_broken(x: &str, y: &str) -> &str {
-        // Compile error saying it can't figure out if the return value is the borrowing of x or y; It's not sure how long those string live.
-        if x.len() > y.len() {
-            x
-        } else {
-            y
-        }
-    }
- */
+    /*
+       fn longest_broken(x: &str, y: &str) -> &str {
+           // Compile error saying it can't figure out if the return value is the borrowing of x or y; It's not sure how long those string live.
+           if x.len() > y.len() {
+               x
+           } else {
+               y
+           }
+       }
+    */
 }
 
+// TODO: @Tarek: Continue review here.
 fn thread_data_transfer() {
-    // (1) Capturing: 
+    // (1) Capturing:
     // Reference variables declared outside the current closure & thread context.
     // Compiler will try figure out how to make it work e.g. by borrowing or moving?
     // Or you can specify yourself how we can make it work e.g. move as follows:
-    let v = vec![1,2,3];
+    let v = vec![1, 2, 3];
     let handle = thread::spawn(move || {
         println!("vector v = {:?}", v);
     });
     handle.join().unwrap();
     println!("\n");
-    
-    // (2) Message Passing: 
+
+    // (2) Message Passing:
     // Safer than shared memory as it's harder to race or access inappropriate locations.
     // If we want to have multiple senders use clone on tx.
     let (tx, rx) = mpsc::channel();
@@ -91,7 +92,7 @@ fn thread_data_transfer() {
     println!("Got: {}", received);
     println!("\n");
 
-    // (3) Shared State : Mutual Exclusion: 
+    // (3) Shared State : Mutual Exclusion:
     // We want more than one thread to be able to modify a value concurrently.
     // Thread has to have the mutex to access the data.
     let m = Mutex::new(5);
@@ -115,10 +116,14 @@ fn thread_data_transfer() {
         let mut b = handler_quit.lock().unwrap();
         *b = true;
         thread::sleep(Duration::from_millis(3000));
-    }).expect("Error setting up the Ctrl-C handler");
+    })
+    .expect("Error setting up the Ctrl-C handler");
     let mut x = 0;
     while !(*quit.lock().unwrap()) {
-        println!("Hello #{}, I'll stop this in 3 seconds if you hit Ctrl-C.", x);
+        println!(
+            "Hello #{}, I'll stop this in 3 seconds if you hit Ctrl-C.",
+            x
+        );
         x += 1;
         thread::sleep(Duration::from_millis(1000));
     }
@@ -129,7 +134,7 @@ fn thread_data_transfer() {
 
 fn spawn_hello_threads() {
     // Main & spawned thread run concurrently, so order of prints is not always same.
-    
+
     let thread_handle = thread::spawn(|| {
         for i in 1..3 {
             println!("Hello #{} from spawned thread", i);
@@ -150,7 +155,7 @@ fn ownership_transfer() {
     // (1) Copy Semantics: for simple types (e.g. int, bool, float), y makes a copy of x. In Rust, copy semantics is generally the exception not the rule.
     let x = 5;
     let y = x;
-    dbg!(x,y);
+    dbg!(x, y);
 
     // (2) Move Semantics: for heap-allocated types, s1 & s2 point to the same thing. BUT s1 can no longer be used as ownership moved to s2.
     let s1 = String::from("hello");
@@ -164,7 +169,7 @@ fn ownership_transfer() {
     /*---*/
     let mut base = String::from("share the workload");
     extend_str_with_length(&mut base);
-    println!("{}",base)
+    println!("{}", base)
 }
 
 fn calc_length(s4: &String) -> usize {
@@ -184,7 +189,7 @@ fn string_slice() {
     let good = &s[0..4];
     let day = &s[5..8];
     println!("{}", good);
-    println!("{}", day)
+    println!("{}", day);
 }
 
 fn print_number() {
@@ -200,10 +205,10 @@ fn shadowing() {
     {
         let mut input = String::new();
         println!("Please input your favorite number. It will be parsed from String to Int.");
-        io::stdin().read_line(&mut input)
+        io::stdin()
+            .read_line(&mut input)
             .expect("Failed to read line");
-        let _input: u32 = input.trim().parse()
-            .expect("Failed : please type a number");
+        let _input: u32 = input.trim().parse().expect("Failed : please type a number");
     }
     // Variables inside the block are dropped when we get here.
 
