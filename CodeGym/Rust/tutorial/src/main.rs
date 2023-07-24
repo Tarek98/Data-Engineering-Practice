@@ -28,6 +28,8 @@ fn main() {
     lifetimes();
 }
 
+// IMPORTANT: We read &a' str as "a string slice that lives at least as long as the lifetime 'a" -> 'a is inferred by the compiler.
+// IMPORTANT: If a data type stores borrowed data, it must be annotated with a lifetime.
 fn lifetimes() {
     // Rust compiler is usually able to determine how long variables will live.
     let s1 = String::from("abcd");
@@ -66,6 +68,9 @@ fn lifetimes() {
        }
     */
 }
+// IMPORTANT: If a data type stores borrowed data, it must be annotated with a lifetime. When possible, make data structures own their data directly.
+#[derive(Debug)]
+struct Highlight<'a>(&'a str);
 
 // TODO: @Tarek: Continue review here.
 fn thread_data_transfer() {
