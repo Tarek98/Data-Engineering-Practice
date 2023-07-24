@@ -104,7 +104,7 @@ fn main() {
 }
 */
 
-
+/*
 // E11.1
 #[derive(Debug)]
 struct Book {
@@ -180,4 +180,80 @@ fn main() {
     println!("The library has {} books", library.len());
     library.print_books();
 }
+*/
+
+/*
+// Destructuring structs in match expression
+struct Foo {
+    x: (u32, u32),
+    y: u32,
+}
+#[rustfmt::skip]
+fn main() {
+    let foo = Foo { x: (1, 2), y: 3 };
+    match foo {
+        Foo { x: (1, b), y } => println!("x.0 = 1, b = {b}, y = {y}"),
+        Foo { y: 2, x: i }   => println!("y = 2, x = {i:?}"),
+        Foo { y, .. }        => println!("y = {y}, other fields were ignored"),
+    }
+}
+
+// Both continue and break can optionally take a label argument which is used to break out of nested loops
+fn main() {
+    let v = vec![10, 20, 30];
+    let mut iter = v.into_iter();
+    'outer: while let Some(x) = iter.next() {
+        println!("x: {x}");
+        let mut i = 0;
+        while i < x {
+            println!("x: {x}, i: {i}");
+            i += 1;
+            if i == 3 {
+                break 'outer;
+            }
+        }
+    }
+}
+*/
+
+/*
+// Lambda functions (rust calls these closures)
+fn main() {
+    let mut v3 = vec![0, 0, 1, 2, 3, 4];
+    // Retain only the even elements.
+    v3.retain(|x| x % 2 == 0);
+    println!("{v3:?}");
+}
+*/
+
+// Traits & dynamic sizing
+trait Pet {
+    fn name(&self) -> String;
+}
+struct Dog {
+    name: String,
+}
+struct Cat;
+impl Pet for Dog {
+    fn name(&self) -> String {
+        self.name.clone()
+    }
+}
+impl Pet for Cat {
+    fn name(&self) -> String {
+        String::from("The cat") // No name, cats won't respond to it anyway.
+    }
+}
+fn main() {
+    let pets: Vec<Box<dyn Pet>> = vec![
+        Box::new(Cat),
+        Box::new(Dog { name: String::from("Fido") }),
+    ];
+    for pet in pets {
+        println!("Hello {}!", pet.name());
+    }
+}
+// Types that implement a given trait may be of different sizes. This makes it impossible to have things like Vec<Pet> in the example above.
+// dyn Pet is a way to tell the compiler about a dynamically sized type that implements Pet.
+
 

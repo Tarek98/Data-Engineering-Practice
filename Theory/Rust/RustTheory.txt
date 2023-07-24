@@ -78,3 +78,10 @@
         single stream of execution. This works pretty well for webapp servers as most of the
         time is actually spent on waiting for network or disk (database / sockets) and the logic
         is not really CPU intensive - that is to say: this works well for IO-bound workloads.
+
+    - Box:
+        - Box is an owned pointer to data on the heap.
+        - Guaranteed to be not null.
+        - Recursive data types or data types with dynamic sizes need to use a Box.
+        - Also useful when we want to transfer ownership of large data - to avoid copying large data on stack.
+        - Box solves this problem as it has the same size as a regular pointer and just points at another element.
