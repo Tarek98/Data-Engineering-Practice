@@ -65,7 +65,7 @@
 * Comprehensive Rust book:
     https://google.github.io/comprehensive-rust/welcome.html
 
-    - How non-blocking async IO works?
+    - 🚧 How non-blocking async IO works?
         - https://www.youtube.com/watch?v=wB9tIg209-8
         
         - For high-speed I/O devices such as file storage devices or network interfaces, 
@@ -79,9 +79,20 @@
         time is actually spent on waiting for network or disk (database / sockets) and the logic
         is not really CPU intensive - that is to say: this works well for IO-bound workloads.
 
+        - 🚧 “Async” is a concurrency model where multiple tasks are executed concurrently by executing
+        each task until it would block, then switching to another task that is ready to make progress.
+            - Allows running large number of tasks on limited number of threads.
+            - "Futures" are polled until they signal they are complete.
+            - 🚧.await asynchronously waits for the completion of another operation. Unlike block_on, .await doesn’t block the current thread.
+
     - Box:
         - Box is an owned pointer to data on the heap.
         - Guaranteed to be not null.
         - Recursive data types or data types with dynamic sizes need to use a Box.
         - Also useful when we want to transfer ownership of large data - to avoid copying large data on stack.
         - Box solves this problem as it has the same size as a regular pointer and just points at another element.
+
+    - Send: a type T is Send if it is safe to move a T across a thread boundary -> allocated in one thread & deallocated in another.
+     
+    - Sync: a type T is Sync if it is safe to move a &T across a thread boundary -> safe to access from multiple threads at the same time.
+

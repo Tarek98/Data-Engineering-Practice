@@ -226,6 +226,7 @@ fn main() {
 }
 */
 
+/*
 // Traits & dynamic sizing
 trait Pet {
     fn name(&self) -> String;
@@ -255,5 +256,49 @@ fn main() {
 }
 // Types that implement a given trait may be of different sizes. This makes it impossible to have things like Vec<Pet> in the example above.
 // dyn Pet is a way to tell the compiler about a dynamically sized type that implements Pet.
+*/
 
+/*
+// Unit test modules allows you to unit test private helpers.
+fn helper(a: &str, b: &str) -> String {
+    format!("{a} {b}")
+}
+pub fn main() {
+    println!("{}", helper("Hello", "World"));
+}
+#[cfg(test)]
+mod tests {
+    use super::*;
 
+    #[test]
+    fn test_helper() {
+        assert_eq!(helper("foo", "bar"), "foo bar");
+    }
+}
+*/
+
+// TODO: E51
+
+/*
+// Tokio Async Runtime
+use tokio::time;
+use tokio;
+async fn count_to(count: i32) {
+    for i in 1..=count {
+        println!("Count in task: {i}!");
+        time::sleep(time::Duration::from_millis(5)).await;
+    }
+}
+#[tokio::main]
+async fn main() {
+    let handle = tokio::spawn(count_to(10));
+
+    for i in 1..5 {
+        println!("Main task: {i}");
+        time::sleep(time::Duration::from_millis(5)).await;
+    }
+
+    let _ = handle.await;
+}
+// The spawn function creates a new, concurrent “task”.
+*/
