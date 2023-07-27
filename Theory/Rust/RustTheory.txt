@@ -73,11 +73,11 @@
         some physical memory buffer before it triggers the interrupt.
 
         - Tokio async tasks (green threads) analogy to nodeJS async IO:
-        Node allows your code to handle requests from hundreds of thousands open socket with 
-        a single thread concurrently by multiplexing and sequencing all your js logic in a 
-        single stream of execution. This works pretty well for webapp servers as most of the
-        time is actually spent on waiting for network or disk (database / sockets) and the logic
-        is not really CPU intensive - that is to say: this works well for IO-bound workloads.
+            Node allows your code to handle requests from hundreds of thousands open socket with 
+            a single thread concurrently by multiplexing and sequencing all your js logic in a 
+            single stream of execution. This works pretty well for webapp servers as most of the
+            time is actually spent on waiting for network or disk (database / sockets) and the logic
+            is not really CPU intensive - that is to say: this works well for IO-bound workloads.
 
         - 🚧 “Async” is a concurrency model where multiple tasks are executed concurrently by executing
         each task until it would block, then switching to another task that is ready to make progress.
