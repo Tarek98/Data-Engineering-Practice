@@ -85,6 +85,13 @@
             - "Futures" are polled until they signal they are complete.
             - 🚧.await asynchronously waits for the completion of another operation. Unlike block_on, .await doesn’t block the current thread.
 
+        - Most async runtimes only allow IO tasks to run concurrently.
+            - A "runtime" provides support for performing operations asynchronously (a reactor) 
+            and is responsible for executing futures (an executor).
+            - Futures are “inert” in that they do not do anything (not even start an I/O operation) unless there is an executor polling them.
+            - CPU blocking tasks will block the executor and prevent other tasks from being executed.
+            - tokio::task::spawn_blocking spawns an actual thread and transforms its handle into a future without blocking the executor.
+
     - Box:
         - Box is an owned pointer to data on the heap.
         - Guaranteed to be not null.

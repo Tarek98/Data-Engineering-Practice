@@ -1,5 +1,5 @@
 /*
-// E7.1
+// E7.1 - Implicit Conversions
 fn main() {
     let y: i8 = 15;
     let x: i16 = 1000;
@@ -13,7 +13,7 @@ fn multiply(x: i16, y: i16) -> i16 {
 */
 
 /*
-// E7.2
+// E7.2 - Arrays & For Loops
 fn main() {
     let matrix = [
         [101, 102, 103],
@@ -64,8 +64,7 @@ fn test_transpose() {
 */
 
 /*
-// TODO: Come back to this when you get to traits & generics.
-// E7.2 Bonus
+// E7.2 Generics & Traits
 // We use the std::convert::AsRef trait to abstract over anything that can be referenced as a slice.
 use std::convert::AsRef;
 use std::fmt::Debug;
@@ -105,7 +104,7 @@ fn main() {
 */
 
 /*
-// E11.1
+// E11.1 - Object Ownership
 #[derive(Debug)]
 struct Book {
     title: String,
@@ -277,9 +276,7 @@ mod tests {
 }
 */
 
-// TODO: E51
 
-/*
 // Tokio Async Runtime
 use tokio::time;
 use tokio;
@@ -301,4 +298,3 @@ async fn main() {
     let _ = handle.await;
 }
 // The spawn function creates a new, concurrent “task”.
-*/
