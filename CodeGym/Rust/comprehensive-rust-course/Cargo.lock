@@ -203,10 +203,13 @@ dependencies = [
 name = "exercise"
 version = "0.1.0"
 dependencies = [
+ "futures-util",
+ "http",
  "reqwest",
  "scraper",
  "thiserror",
  "tokio",
+ "tokio-websockets",
 ]
 
 [[package]]
@@ -308,6 +311,7 @@ dependencies = [
  "futures-core",
  "futures-io",
  "futures-macro",
+ "futures-sink",
  "futures-task",
  "memchr",
  "pin-project-lite",
@@ -1246,6 +1250,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "sha1_smol"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae1a47186c03a32177042e55dbc5fd5aee900b8e0069a8d70fba96a9375cd012"
+
+[[package]]
 name = "signal-hook-registry"
 version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1473,6 +1483,23 @@ dependencies = [
  "pin-project-lite",
  "tokio",
  "tracing",
+]
+
+[[package]]
+name = "tokio-websockets"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3bd056b4095b3ec42b9a13d6985f3b1f7d2ee1a216440a9b25e122c15edfdce3"
+dependencies = [
+ "base64",
+ "bytes",
+ "fastrand",
+ "futures-util",
+ "http",
+ "httparse",
+ "sha1_smol",
+ "tokio",
+ "tokio-util",
 ]
 
 [[package]]
