@@ -276,6 +276,7 @@ mod tests {
 }
 */
 
+/*
 // Tokio Async Runtime
 use tokio::time;
 use tokio;
@@ -297,4 +298,34 @@ async fn main() {
     let _ = handle.await;
 }
 // The spawn function creates a new, concurrent “task”.
+*/
+
+// Buffered file read
+use tokio::{
+    io::{AsyncReadExt, AsyncWriteExt},
+};
+use bytes::Bytes;
+use tokio::fs::File;
+use std::error::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    const BUFFER_SIZE: usize = 3;
+
+    let mut file = File::create("foo.txt").await?;
+    file.write_all(b"hello, world!").await?;
+
+    let mut file = File::open("foo.txt").await?;
+    let mut buffer = [0u8; BUFFER_SIZE];
+    loop {
+        let size = file.read(&mut buffer).await?;
+        if size == 0 {
+            println!("empty buf");
+            break;
+        }
+        println!("bytes read: {:?}", Some(Bytes::from(buffer[0..size].to_vec())));
+    }
+
+    Ok(())
+}
 

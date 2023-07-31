@@ -203,6 +203,7 @@ dependencies = [
 name = "exercise"
 version = "0.1.0"
 dependencies = [
+ "bytes",
  "futures-util",
  "http",
  "reqwest",
