@@ -300,6 +300,7 @@ async fn main() {
 // The spawn function creates a new, concurrent “task”.
 */
 
+/*
 // Buffered file read
 use tokio::{
     io::{AsyncReadExt, AsyncWriteExt},
@@ -328,4 +329,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
+*/
 
+use anyhow::{Context, Result};
+fn main() -> Result<()> {
+    let _file = std::fs::File::open("invalid.txt")
+        .with_context(|| format!("failed to open file"))?;
+    println!("succeeded file read");
+    Ok(())
+}
