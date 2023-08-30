@@ -333,8 +333,18 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
 use anyhow::{Context, Result};
 fn main() -> Result<()> {
+    // let _file = std::fs::File::open("invalid.txt")
+    //     .with_context(|| format!("failed to open file"))?;
+    // // ^This code block would return as soon as _file is of type Err, because of the "?" at the end unwrapping the result.
+
     let _file = std::fs::File::open("invalid.txt")
-        .with_context(|| format!("failed to open file"))?;
-    println!("succeeded file read");
+        .with_context(|| format!("failed to open file"));
+    if let Err(e) = _file {
+        println!("error: {:?}", e);
+    } else {
+        println!("succeeded file read");
+    }
+
+    println!("exiting gracefully");
     Ok(())
 }
