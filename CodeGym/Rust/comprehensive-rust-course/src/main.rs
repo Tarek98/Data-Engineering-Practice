@@ -331,20 +331,51 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 */
 
-use anyhow::{Context, Result};
-fn main() -> Result<()> {
-    // let _file = std::fs::File::open("invalid.txt")
-    //     .with_context(|| format!("failed to open file"))?;
-    // // ^This code block would return as soon as _file is of type Err, because of the "?" at the end unwrapping the result.
+// use anyhow::{Context, Result};
+// fn main() -> Result<()> {
+//     // let _file = std::fs::File::open("invalid.txt")
+//     //     .with_context(|| format!("failed to open file"))?;
+//     // // ^This code block would return as soon as _file is of type Err, because of the "?" at the end unwrapping the result.
+//
+//     let _file = std::fs::File::open("invalid.txt")
+//         .with_context(|| format!("failed to open file"));
+//     if let Err(e) = _file {
+//         println!("error: {:?}", e);
+//     } else {
+//         println!("succeeded file read");
+//     }
+//
+//     println!("exiting gracefully");
+//     Ok(())
+// }
 
-    let _file = std::fs::File::open("invalid.txt")
-        .with_context(|| format!("failed to open file"));
-    if let Err(e) = _file {
-        println!("error: {:?}", e);
-    } else {
-        println!("succeeded file read");
+use std::mem;
+use std::sync::Arc;
+use tokio::sync::{Mutex, MutexGuard};
+#[tokio::main]
+async fn main() {
+    let mtx = Arc::new(Mutex::new(-1));
+
+    let mut handles = vec![];
+
+    for i in 0..3 {
+        let mtx = Arc::clone(&mtx);
+
+        handles.push(
+            tokio::task::spawn(async move {
+                let mut guard = mtx.lock().await;
+                *guard += 1;
+                println!("i: {}, val: {:?}", i, *guard);
+            })
+        );
     }
 
-    println!("exiting gracefully");
-    Ok(())
+    for handle in handles {
+        let _ = handle.await;
+    }
+
+    let mtx = Arc::clone(&mtx);
+    let val = mem::take(&mut *mtx.lock().await);
+    println!("val: {:?}", val);
+    println!("mtx: {:?}", *mtx.lock().await);
 }
