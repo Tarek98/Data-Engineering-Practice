@@ -1,13 +1,10 @@
 // To compile: rustc starter.rs
 // To run: ./starter
 
-use std::io;
-use std::sync::{mpsc, Arc, Mutex};
-use std::thread;
-use std::time::Duration;
-use std::vec;
-
 fn main() {
+    println!("\n");
+    futures();
+
     if false {
         println!("\n");
         println!("Hello World!");
@@ -23,10 +20,11 @@ fn main() {
         spawn_hello_threads();
         println!("\n");
         thread_data_transfer();
+        println!("\n");
+        lifetimes();
     }
-    println!("\n");
-    lifetimes();
 }
+
 
 // IMPORTANT: We read &a' str as "a string slice that lives at least as long as the lifetime 'a" -> 'a is inferred by the compiler.
 // IMPORTANT: If a data type stores borrowed data, it must be annotated with a lifetime.
@@ -74,6 +72,10 @@ struct Highlight<'a>(&'a str);
 
 // TODO: @Tarek: Continue review here.
 fn thread_data_transfer() {
+    use std::thread;
+    use std::time::Duration;
+    use std::sync::{mpsc, Arc, Mutex};
+
     // (1) Capturing:
     // Reference variables declared outside the current closure & thread context.
     // Compiler will try figure out how to make it work e.g. by borrowing or moving?
@@ -138,6 +140,9 @@ fn thread_data_transfer() {
 }
 
 fn spawn_hello_threads() {
+    use std::thread;
+    use std::time::Duration;
+
     // Main & spawned thread run concurrently, so order of prints is not always same.
 
     let thread_handle = thread::spawn(|| {
@@ -204,6 +209,8 @@ fn print_number() {
 }
 
 fn shadowing() {
+    use std::io;
+
     // Shadowing: feature allowing you to reuse variable names; Old variable can no longer be used.
 
     // Variables inside the block do not exist yet here.

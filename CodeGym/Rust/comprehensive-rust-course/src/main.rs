@@ -1,18 +1,31 @@
-/*
+
 // E7.1 - Implicit Conversions
+/*
 fn main() {
     let y: i8 = 15;
-    let x: i16 = 1000;
+    let x: i16 = -1000;
+    let mut z: u64 = 500;
 
     // println!("{x} * {y} = {}", multiply(x, y.into()));
-    println!("{x} * {y} = {}", multiply(x, i16::from(y)));
+    println!("multiply({x}, i16::from({y})) = {}", multiply(x, i16::from(y)));
+
+    loop {
+        if z == 2000 {
+            break;
+        }
+        println!("Sleeping {z} milliseconds...");
+        std::thread::sleep(std::time::Duration::from_millis(z));
+        z += 500;
+    }
+
+    println!("End!");
 }
+
 fn multiply(x: i16, y: i16) -> i16 {
     x * y
 }
 */
 
-/*
 // E7.2 - Arrays & For Loops
 fn main() {
     let matrix = [
@@ -28,6 +41,7 @@ fn main() {
     println!("transposed:");
     pretty_print(&transposed);
 }
+
 fn transpose(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
     let mut result = [[0;3];3];
 
@@ -39,15 +53,17 @@ fn transpose(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
 
     return result;
 }
+
 fn pretty_print(matrix: &[[i32; 3]; 3]) {
     for row in matrix {
         println!("{:?}", row);
     }
 }
+
 #[test]
 fn test_transpose() {
     let matrix = [
-        [101, 102, 103], //
+        [101, 102, 103],
         [201, 202, 203],
         [301, 302, 303],
     ];
@@ -55,13 +71,13 @@ fn test_transpose() {
     assert_eq!(
         transposed,
         [
-            [101, 201, 301], //
+            [101, 201, 301],
             [102, 202, 302],
             [103, 203, 303],
         ]
     );
 }
-*/
+
 
 /*
 // E7.2 Generics & Traits
@@ -331,24 +347,27 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 */
 
-// use anyhow::{Context, Result};
-// fn main() -> Result<()> {
-//     // let _file = std::fs::File::open("invalid.txt")
-//     //     .with_context(|| format!("failed to open file"))?;
-//     // // ^This code block would return as soon as _file is of type Err, because of the "?" at the end unwrapping the result.
-//
-//     let _file = std::fs::File::open("invalid.txt")
-//         .with_context(|| format!("failed to open file"));
-//     if let Err(e) = _file {
-//         println!("error: {:?}", e);
-//     } else {
-//         println!("succeeded file read");
-//     }
-//
-//     println!("exiting gracefully");
-//     Ok(())
-// }
+/*
+use anyhow::{Context, Result};
+fn main() -> Result<()> {
+    // let _file = std::fs::File::open("invalid.txt")
+    //     .with_context(|| format!("failed to open file"))?;
+    // // ^This code block would return as soon as _file is of type Err, because of the "?" at the end unwrapping the result.
 
+    let _file = std::fs::File::open("invalid.txt")
+        .with_context(|| format!("failed to open file"));
+    if let Err(e) = _file {
+        println!("error: {:?}", e);
+    } else {
+        println!("succeeded file read");
+    }
+
+    println!("exiting gracefully");
+    Ok(())
+}
+*/
+
+/*
 use std::mem;
 use std::sync::Arc;
 use tokio::sync::{Mutex, MutexGuard};
@@ -379,3 +398,19 @@ async fn main() {
     println!("val: {:?}", val);
     println!("mtx: {:?}", *mtx.lock().await);
 }
+*/
+
+/*
+use bytes::Buf;
+fn main() {
+    let mut buf = &b"hello world"[..];
+
+    let r = buf.len();
+
+    println!("{:?}", buf);
+
+    buf.advance(5);
+
+    println!("{:?}", buf);
+}
+*/
